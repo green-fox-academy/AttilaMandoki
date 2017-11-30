@@ -1,24 +1,26 @@
 import java.util.Scanner;
 
 public class factorial {
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        Scanner number = new Scanner(System.in);
+    Scanner number = new Scanner(System.in);
 
-        System.out.println("Please enter a positive, whole number:");
+    System.out.println("Please enter a positive, whole number:");
 
-        int userInput = number.nextInt();
+    int userInput = number.nextInt();
 
-        factorial(userInput);
+    factorial(userInput);
+
+    System.out.println(factorial(userInput));
 
 
+  }
+
+  public static int factorial(int input) {
+    int value = 1;
+    for (int f = 2; f <= input; f++) {
+      value *= f;
     }
-
-    public static int factorial(int userInput) {
-
-        for (int f = 2; f <= userInput; f++) {
-            userInput *= f;
-        }
-        return userInput;
-    }
+    return value;
+  }
 }
