@@ -3,7 +3,9 @@ public class SumElements {
 
     int r[] = {54, 23, 66, 12};
 
-    
+    int sum = (r[1] + r[2]);
+
+    System.out.println(sum);
   }
 }
 /*
