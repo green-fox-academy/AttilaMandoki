@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Calculator {
   public static void main(String... args) {
     // Create a simple calculator application which reads the parameters from the prompt
@@ -16,6 +18,51 @@ public class Calculator {
     // Print the result to the prompt
     // Exit
 
-    System.out.println("Please type in the expression:\n (eg.: + 1 1)");
+    System.out.println("Please enter the expression:\n(Use one of the following: +, -, *, /, %)");
+
+    Scanner input = new Scanner(System.in);
+
+    String userInput1 = input.nextLine();
+
+    if (userInput1.equals("+")) {
+      System.out.println("Enter the first operand:");
+      int userInput2 = input.nextInt();
+      System.out.println("Enter the second operand:");
+      int userInput3 = input.nextInt();
+      int result = userInput2 + userInput3;
+      System.out.println(result);
+
+    } else if (userInput1.equals("-")) {
+      System.out.println("Enter the first operand:");
+      int userInput2 = input.nextInt();
+      System.out.println("Enter the second operand:");
+      int userInput3 = input.nextInt();
+      int result = userInput2 - userInput3;
+      System.out.println(result);
+
+    } else if (userInput1.equals("*")) {
+      System.out.println("Enter the first operand:");
+      int userInput2 = input.nextInt();
+      System.out.println("Enter the second operand:");
+      int userInput3 = input.nextInt();
+      int result = userInput2 * userInput3;
+      System.out.println(result);
+
+    } else if (userInput1.equals("/")) {
+      System.out.println("Enter the first operand:");
+      int userInput2 = input.nextInt();
+      System.out.println("Enter the second operand:");
+      int userInput3 = input.nextInt();
+      int result = userInput2 / userInput3;
+      System.out.println(result);
+
+    } else if (userInput1.equals("%")) {
+      System.out.println("Enter the first operand:");
+      float userInput2 = input.nextInt();
+      System.out.println("Enter the second operand:");
+      float userInput3 = input.nextInt();
+      float result = (userInput3 / userInput2) * 100;
+      System.out.println(result);
+    }
   }
 }

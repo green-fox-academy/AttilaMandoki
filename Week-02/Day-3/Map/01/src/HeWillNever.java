@@ -5,7 +5,7 @@ public class HeWillNever {
     String out = "";
     int[] notSoCrypticMessage = {1, 12, 1, 2, 11, 1, 7, 11, 1, 49, 1, 3, 11, 1, 50, 11};
 
-    Map<String, String> map = new HashMap<String, String>();
+    Map<Integer, String> map = new HashMap<>();
 
     map.put(7, "run around and desert you");
     map.put(50, "tell a lie and hurt you");
@@ -16,12 +16,13 @@ public class HeWillNever {
     map.put(11, "\n");
     map.put(3, "say goodbye");
 
+    List sortedKeys=new ArrayList(map.keySet());
+    Collections.sort(sortedKeys);
+
+    System.out.println(sortedKeys);
+
     // Things are a little bit messed up
     // Your job is to decode the notSoCrypticMessage by using the hashmap as a look up table
     // Assemble the fragments into the out variable
-
-    List sortedKeys = new ArrayList(map.keySet());
-    Collections.sort(sortedKeys);
-    System.out.println(sortedKeys);
   }
 }
