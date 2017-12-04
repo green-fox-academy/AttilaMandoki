@@ -16,10 +16,11 @@ public class HeWillNever {
     map.put(11, "\n");
     map.put(3, "say goodbye");
 
-    List sortedKeys=new ArrayList(map.keySet());
-    Collections.sort(sortedKeys);
+    for (int i = 0; i < notSoCrypticMessage.length; i++) {
+      System.out.print(map.get(notSoCrypticMessage[i]) + " ");
+    }
 
-    System.out.println(sortedKeys);
+    //System.out.println();
 
     // Things are a little bit messed up
     // Your job is to decode the notSoCrypticMessage by using the hashmap as a look up table
