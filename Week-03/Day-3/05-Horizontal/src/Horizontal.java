@@ -1,18 +1,16 @@
 import javax.swing.*;
 
-        import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.awt.*;
 import java.util.Scanner;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class ToTheCenter {
+public class Horizontal {
 
-  public static void mainDraw(Graphics graphics) {
+  public static void mainDraw(Graphics graphics){
     // create a line drawing function that takes 2 parameters:
     // the x and y coordinates of the line's starting point
-    // and draws a line from that point to the center of the canvas.
+    // and draws a 50 long horizontal line from that point.
     // draw 3 lines with that function.
 
     Scanner scanner = new Scanner(System.in);
@@ -22,13 +20,9 @@ public class ToTheCenter {
     System.out.println("Please enter second coordinate:");
     int userInput2 = scanner.nextInt();
 
-    int starterX = userInput1;
-    int starterY = userInput2;
+    int x = userInput1 + 50;
 
-    int centreX = 160;
-    int centreY = 171;
-
-    graphics.drawLine(starterX, starterY, centreX, centreY);
+    graphics.drawLine(userInput1, userInput2, x, userInput2);
 
   }
 
