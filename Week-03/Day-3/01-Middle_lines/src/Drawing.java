@@ -11,10 +11,10 @@ public class Drawing {
     //  draw a green vertical line to the canvas' middle.
 
     graphics.setColor(Color.RED);
-    graphics.drawLine(0, 171, 320, 171);
+    graphics.drawLine(0, HEIGHT / 2, WIDTH, HEIGHT / 2);
 
     graphics.setColor(Color.GREEN);
-    graphics.drawLine(160, 0, 160, 343);
+    graphics.drawLine(WIDTH / 2, 0, WIDTH / 2, HEIGHT);
 
 
 

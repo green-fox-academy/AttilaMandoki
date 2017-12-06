@@ -1,22 +1,17 @@
 import javax.swing.*;
 
         import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class ToTheCenter {
+public class SquarePositioning {
 
-  public static void mainDraw(Graphics graphics) {
-    // create a line drawing function that takes 2 parameters:
-    // the x and y coordinates of the line's starting point
-    // and draws a line from that point to the center of the canvas.
-    // draw 3 lines with that function.
-
-
-
+  public static void mainDraw(Graphics graphics){
+    // create a square drawing function that takes 2 parameters:
+    // the x and y coordinates of the square's top left corner
+    // and draws a 50x50 square from that point.
+    // draw 3 squares with that function.
 
     Scanner scanner = new Scanner(System.in);
 
@@ -25,13 +20,10 @@ public class ToTheCenter {
     System.out.println("Please enter second coordinate:");
     int userInput2 = scanner.nextInt();
 
-    int starterX = userInput1;
-    int starterY = userInput2;
+    int sides = 50;
 
-    int centreX = WIDTH / 2;
-    int centreY = HEIGHT / 2;
+    graphics.drawRect(userInput1, userInput2, sides, sides);
 
-    graphics.drawLine(starterX, starterY, centreX, centreY);
 
   }
 

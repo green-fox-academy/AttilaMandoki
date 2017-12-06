@@ -10,10 +10,10 @@ public class Diagonals {
     // draw the canvas' diagonals in green.
 
     graphics.setColor(Color.GREEN);
-    graphics.drawLine(0, 0, 320, 343);
+    graphics.drawLine(0, 0, WIDTH, HEIGHT);
 
     graphics.setColor(Color.GREEN);
-    graphics.drawLine(320, 0, 0, 343);
+    graphics.drawLine(WIDTH, 0, 0, HEIGHT);
 
   }
 
