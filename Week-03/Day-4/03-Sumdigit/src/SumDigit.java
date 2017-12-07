@@ -1,6 +1,6 @@
 public class SumDigit {
   public static void main(String[] args) {
-    int n = 1 + (int)(Math.random() * ((1000 - 1) + 1));
+    int n = (int)(Math.random() * (100 - 1));
     System.out.println(n);
     System.out.print(summing(n));
   }
