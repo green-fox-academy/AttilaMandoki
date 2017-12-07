@@ -15,12 +15,7 @@ public class CenteredBoxes {
     int canvasCenterX = WIDTH / 2;
     int canvasCenterY = HEIGHT / 2;
     int sizeX = defSize();
-    squareCreator(sizeX);
-/*
-    for (int i = 0; i < 2; i++) {
 
-    }
-*/
     graphics.drawRect(canvasCenterX - sizeX / 2, canvasCenterY - sizeX / 2, sizeX, sizeX);
   }
 
@@ -29,14 +24,16 @@ public class CenteredBoxes {
     Scanner scanner = new Scanner(System.in);
     System.out.println("Please enter the size of the square:");
     int userInput = scanner.nextInt();
+    int squareCreator = userInput * userInput;
+    return squareCreator;
 
-    return userInput;
+    //return userInput;
   }
 
-  public static int squareCreator(int squareSide) {
-    int squareSize =  squareSide * squareSide;
+  //public static int squareCreator() {
+    //int squareSize =  squareSide * squareSide;
 
-    return squareSize;
+    //return squareSize;
   }
 
   //    Don't touch the code below
