@@ -12,12 +12,10 @@ public class Counter {
     int numberTaken = newScanner.nextInt();
 
     return numberTaken;
-
   }
-
   public static void recursion(int n) {
     if (n == 0) {
-      System.out.println("Please enter a number greater than 0.");
+      System.out.println("You've hit zero.");
     } else {
       System.out.println(n);
       recursion(n - 1);

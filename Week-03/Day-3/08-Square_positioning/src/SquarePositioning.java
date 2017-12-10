@@ -1,8 +1,6 @@
 import javax.swing.*;
-
-        import java.awt.*;
+import java.awt.*;
 import java.util.Scanner;
-
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class SquarePositioning {
@@ -23,8 +21,6 @@ public class SquarePositioning {
     int sides = 50;
 
     graphics.drawRect(userInput1, userInput2, sides, sides);
-
-
   }
 
   //    Don't touch the code below
