@@ -4,7 +4,7 @@ public class Unique {
 
   public static void main(String[] args) {
 
-    ArrayList<Integer> withDuplicates = new ArrayList<Integer>(inputList());
+    ArrayList<Integer> withDuplicates = new ArrayList<>(inputList());
     System.out.println(withDuplicates);
 
   }
@@ -14,12 +14,13 @@ public class Unique {
             " then type in \"Y\"");
     Scanner userList = new Scanner(System.in);
 
-    ArrayList<Integer> inputList = new ArrayList<Integer>();
+    ArrayList<Integer> inputList = new ArrayList<>();
 
     while (userList.hasNextInt()) {
       inputList.add(userList.nextInt());
 
     }
+    return inputList;
   }
 }
 
