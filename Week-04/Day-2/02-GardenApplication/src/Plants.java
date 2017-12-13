@@ -1,10 +1,10 @@
 public class Plants {
 
   String color;
-  Float waterLevel;
+  Double waterLevel;
   Boolean needingWater;
 
-  public Plants(String color, Float waterLevel, Boolean needingWater) {
+  public Plants(String color, Double waterLevel, Boolean needingWater) {
     this.color = color;
     this.waterLevel = waterLevel;
     this.needingWater = needingWater;
@@ -12,7 +12,7 @@ public class Plants {
   }
 
   public Plants() {
-    this.color = "green";
+    this.color = "color";
     this.waterLevel = null;
     this.needingWater = true;
 
@@ -26,11 +26,11 @@ public class Plants {
     this.color = color;
   }
 
-  public Float getWaterLevel() {
+  public Double getWaterLevel() {
     return waterLevel;
   }
 
-  public void setWaterLevel(Float waterLevel) {
+  public void setWaterLevel(Double waterLevel) {
     this.waterLevel = waterLevel;
   }
 
