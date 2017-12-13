@@ -29,7 +29,7 @@ public class Sponsor extends Person {
     System.out.println(goalMessage + "Hire brilliant junior software developers.");
   }
   public void introduce() {
-    System.out.println( "Hi, I'm " + name + ", a " + age + " year old " + gender + "who represents" + companyName + " and hired " + hiredStudents + " students so far.");
+    System.out.println( "Hi, I'm " + name + ", a " + age + " year old " + gender + " who represents " + companyName + " and hired " + hiredStudents + " students so far.");
 
   }
 }

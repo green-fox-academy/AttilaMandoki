@@ -11,13 +11,13 @@ public class Mentor extends Person {
     this.name = "Jane Doe";
     this.age = 30;
     this.gender = "female";
-    this.level = "Intermediate";
+    this.level = "intermediate";
   }
   public void getGoal() {
     System.out.println(goalMessage + "Educate brilliant junior software developers.");
   }
   public void introduce() {
-    System.out.println( "Hi, I'm " + name + ", a " + age + " year old " + gender + level + " mentor.");
+    System.out.println( "Hi, I'm " + name + ", a " + age + " year old " + gender + " " + level + " mentor.");
   }
 }
 

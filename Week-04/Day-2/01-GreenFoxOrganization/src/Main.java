@@ -24,10 +24,10 @@ public class Main {
     student.skipDays(3);
 
     for (int i = 0; i < 5; i++) {
-      elon.hire();
+      elon.hiredStudents();
     }
     for (int i = 0; i < 3; i++) {
-      sponsor.hire();
+      sponsor.hiredStudents();
     }
 
     for (Person person : people) {
