@@ -13,7 +13,5 @@ public class Garden {
     Plants orange = new Trees("Orange", 0.0, true, 0.4);
     allPlants.add(orange);
 
-      
-    }
   }
 }

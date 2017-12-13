@@ -1,4 +1,4 @@
-public class Trees extends Plants{
+public class Trees extends Plants {
   Double waterConsumption;
 
   public Trees(String color, Double waterLevel, Boolean needingWater, Double waterConsumption) {
@@ -7,11 +7,11 @@ public class Trees extends Plants{
 
   }
 
-    public Trees() {
-      this.waterConsumption = 0.4;
-      this.setColor(color);
-      this.setNeedingWater(true);
-      this.setWaterLevel(0.0);
+  public Trees() {
+    this.waterConsumption = 0.4;
+    this.setColor(color);
+    this.setNeedingWater(true);
+    this.setWaterLevel(0.0);
 
   }
 

@@ -7,11 +7,11 @@ public class Flowers extends Plants {
 
   }
 
-    public Flowers() {
-      this.waterConsumption = 0.75;
-      this.setColor(color);
-      this.setNeedingWater(true);
-      this.setWaterLevel(0.0);
+  public Flowers() {
+    this.waterConsumption = 0.75;
+    this.setColor(color);
+    this.setNeedingWater(true);
+    this.setWaterLevel(0.0);
 
   }
 
