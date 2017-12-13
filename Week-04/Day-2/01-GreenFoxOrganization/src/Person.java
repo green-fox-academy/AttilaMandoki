@@ -6,10 +6,16 @@ public class Person {
   String goalMessage = "My goal is: ";
 
 
-  public Person (String name, int age, String gender) {
+  public Person(String name, int age, String gender) {
     this.name = name;
     this.age = age;
     this.gender = gender;
+  }
+
+  public Person() {
+    this.name = "Jane Doe";
+    this.age = 30;
+    this.gender = "female";
   }
 
   public void introduce() {
@@ -19,11 +25,5 @@ public class Person {
   public void getGoal() {
     System.out.println(goalMessage + "Live for the moment!");
 
-  }
-
-  public Person(){
-    this.name = "Jane Doe";
-    this.age = 30;
-    this.gender = "female";
   }
 }

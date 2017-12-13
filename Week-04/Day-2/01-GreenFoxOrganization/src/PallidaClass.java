@@ -4,8 +4,8 @@ import java.util.List;
 public class PallidaClass {
 
   String className;
-  List<Student>students;
-  List<Mentor>mentors;
+  List<Student> students;
+  List<Mentor> mentors;
 
   public PallidaClass(String className) {
     this.className = className;
@@ -17,7 +17,7 @@ public class PallidaClass {
     students.add(student);
   }
 
-  public void addMentor(Mentor mentor){
+  public void addMentor(Mentor mentor) {
     mentors.add(mentor);
   }
 
@@ -26,10 +26,3 @@ public class PallidaClass {
             " students and " + mentors.size() + " mentors.");
   }
 }
-
-/*
-fields:
-addStudent(Student): adds the given Student to students list
-addMentor(Mentor): adds the given Mentor to mentors list
-info(): prints out "Pallida className class has students.size students and mentors.size mentors."
-*/

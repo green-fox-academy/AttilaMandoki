@@ -28,12 +28,9 @@ public class Sponsor extends Person {
   public void getGoal() {
     System.out.println(goalMessage + "Hire brilliant junior software developers.");
   }
+
   public void introduce() {
-    System.out.println( "Hi, I'm " + name + ", a " + age + " year old " + gender + " who represents " + companyName + " and hired " + hiredStudents + " students so far.");
+    System.out.println("Hi, I'm " + name + ", a " + age + " year old " + gender + " who represents " + companyName + " and hired " + hiredStudents + " students so far.");
 
   }
 }
- /*
-  Sponsor(name, age, gender, company): beside the given parameters, it sets hiredStudents to 0
-  Sponsor(): sets name to Jane Doe, age to 30, gender to female, company to Google and hiredStudents to 0
-  */
