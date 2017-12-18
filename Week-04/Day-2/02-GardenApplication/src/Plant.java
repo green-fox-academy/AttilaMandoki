@@ -1,18 +1,17 @@
-public class Plants {
+public class Plant {
+  private String color;
+  private Double waterLevel;
+  private Boolean needingWater;
 
-  String color;
-  Double waterLevel;
-  Boolean needingWater;
-
-  public Plants(String color, Double waterLevel, Boolean needingWater) {
+  public Plant(String color, Double waterLevel, Boolean needingWater) {
     this.color = color;
     this.waterLevel = waterLevel;
     this.needingWater = needingWater;
 
   }
 
-  public Plants() {
-    this.color = "color";
+  public Plant() {
+    this.color = "";
     this.waterLevel = null;
     this.needingWater = true;
 

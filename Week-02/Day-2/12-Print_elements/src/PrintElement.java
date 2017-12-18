@@ -1,7 +1,7 @@
 public class PrintElement {
   public static void main(String[] args) {
 
-    int[] af =new int[4];
+    int[] af = new int[4];
 
     af[0] = 4;
     af[1] = 5;

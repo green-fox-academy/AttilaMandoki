@@ -1,15 +1,15 @@
-public class Trees extends Plants {
-  Double waterConsumption;
+public class Flower extends Plant {
+  double waterConsumption;
 
-  public Trees(String color, Double waterLevel, Boolean needingWater, Double waterConsumption) {
+  public Flower(String color, Double waterLevel, Boolean needingWater, Double waterConsumption) {
     super(color, waterLevel, needingWater);
     this.waterConsumption = 0.75;
 
   }
 
-  public Trees() {
-    this.waterConsumption = 0.4;
-    this.setColor(color);
+  public Flower() {
+    this.waterConsumption = 0.75;
+    this.setColor(getColor());
     this.setNeedingWater(true);
     this.setWaterLevel(0.0);
 
@@ -21,13 +21,15 @@ public class Trees extends Plants {
 
   public void setWaterConsumption(Double waterConsumption) {
     this.waterConsumption = waterConsumption;
+
   }
 
-  public void needingWater() {
+  public boolean needingWater() {
     if (getWaterLevel() < 5) {
       setNeedingWater(true);
     } else {
       setNeedingWater(false);
     }
+    return needingWater();
   }
 }

@@ -6,6 +6,7 @@ public class Dice {
 //    Check the current rolled numbers with getCurrent()
 //    You can reroll with reroll()
 //    Your task is to get where all dice is a 6
+
   int[] dices = new int[6];
 
   public int[] roll() {
@@ -31,7 +32,9 @@ public class Dice {
 
   public void reRoll(int k) {
     dices[k] = (int) (Math.random() * 6) + 1;
-  }
+    }
+
+
 
   public static void main(String[] args) {
     Dice myDice = new Dice();
