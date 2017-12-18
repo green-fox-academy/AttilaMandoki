@@ -4,7 +4,7 @@ public class Animal {
     int thirst = 50;
     String name = "Lion";
 
-  public Animal(){
+  public Animal() {
     this(50, 50);
   }
 

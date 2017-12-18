@@ -32,19 +32,35 @@ public class Dice {
 
   public void reRoll(int k) {
     dices[k] = (int) (Math.random() * 6) + 1;
-    }
-
-
+  }
 
   public static void main(String[] args) {
-    Dice myDice = new Dice();
-    myDice.getCurrent();
-    myDice.roll();
-    myDice.getCurrent();
-    myDice.getCurrent(5);
-    myDice.reRoll();
-    myDice.getCurrent();
-    myDice.reRoll(4);
-    myDice.getCurrent();
+    Dice luckyDice = new Dice();
+    luckyDice.roll();
+
+    for (int i = 0; i < luckyDice.dices.length ; i++) {
+      while (luckyDice.getCurrent(i) != 6) {
+        luckyDice.reRoll(i);
+        System.out.println(Arrays.toString(luckyDice.dices));
+      }
+    }
+    System.out.println(Arrays.toString(luckyDice.dices));
+
+
+/*
+Dice myDice = new Dice();
+myDice.getCurrent();
+myDice.roll();
+myDice.getCurrent();
+myDice.getCurrent(5);
+myDice.reRoll();
+myDice.getCurrent();
+myDice.reRoll(4);
+myDice.getCurrent();
+
+System.out.println(myDice.dices.toString());
+*/
+
+
   }
 }
