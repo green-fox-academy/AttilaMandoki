@@ -1,3 +1,5 @@
+//Taken from Lilla's repo where we worked on the project in a group.
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
