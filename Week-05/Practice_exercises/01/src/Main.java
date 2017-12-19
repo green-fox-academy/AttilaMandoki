@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
   //get the even numbers from the following array:
@@ -10,11 +9,11 @@ public class Main {
     System.out.println(evenNumbers(n));
 
   }
-  public static ArrayList<Integer> evenNumbers(int[] inputList){
+  public static ArrayList evenNumbers(int[] inputList){
     ArrayList<Integer> result = new ArrayList<>();
     for (int i = 0; i < inputList.length; i++) {
-      if (i % 2 == 0) {
-        result.add(i);
+      if (inputList[i] % 2 == 0) {
+        result.add(inputList[i]);
       }
     }
     return result;

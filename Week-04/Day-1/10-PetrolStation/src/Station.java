@@ -2,7 +2,7 @@ public class Station {
   private int stationGasAmount;
 
   public Station() {
-    this(1000);
+    this.stationGasAmount = 1000;
   }
 
   public Station(int stationGasAmount) {
