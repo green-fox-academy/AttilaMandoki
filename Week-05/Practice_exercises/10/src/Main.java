@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
 
@@ -16,9 +15,7 @@ public class Main {
     Fox fox4 = new Fox("Cobus", "karagan", "azure");
     Fox fox5 = new Fox("Sorcerer", "pallida", "green");
 
-    //Contacts.add(new Data(name, address, contact));
-
-    List<Fox> bagOfFoxes = new ArrayList<>();
+    ArrayList<Fox> bagOfFoxes = new ArrayList<>();
 
     bagOfFoxes.add(fox1);
     bagOfFoxes.add(fox2);
@@ -30,20 +27,14 @@ public class Main {
 
   }
 
-  public static String foxInABag(ArrayList<Fox> inputList) {
-    String greenFoxes = "";
-    String greenPallidaFoxes = "";
-    String badCatch = "You've got bit by a nasty fox!";
+  public static ArrayList<Fox> foxInABag(ArrayList<Fox> inputList) {
+    ArrayList greenFoxes = new ArrayList<>();
+
     for (int i = 0; i < inputList.size(); i++) {
-      if (inputList.contains("green")) {
-        greenFoxes = inputList.get(i);
-        return greenFoxes;
-      } else if (inputList.contains("green") && inputList.contains("pallida")) {
-        greenPallidaFoxes = inputList.get(i);
-        return greenPallidaFoxes
-      } else {
+      if (inputList.get(i).getColor().equals("green")) {
+        greenFoxes.add(inputList.get(i));
       }
     }
-    return badCatch;
+    return greenFoxes;
   }
 }
