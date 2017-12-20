@@ -4,16 +4,17 @@ public class Main {
   //get the even numbers from the following array:
   public static void main(String[] args) {
 
-    int[] n = { 1, 3, -2, -4, -7, -3, -8, 12, 19, 6, 9, 10, 14 };
+    int[] n = {1, 3, -2, -4, -7, -3, -8, 12, 19, 6, 9, 10, 14};
 
     System.out.println(evenNumbers(n));
 
   }
-  public static ArrayList evenNumbers(int[] inputList){
+
+  private static ArrayList evenNumbers(int[] inputList) {
     ArrayList<Integer> result = new ArrayList<>();
-    for (int i = 0; i < inputList.length; i++) {
-      if (inputList[i] % 2 == 0) {
-        result.add(inputList[i]);
+    for (int anInputList : inputList) {
+      if (anInputList % 2 == 0) {
+        result.add(anInputList);
       }
     }
     return result;
