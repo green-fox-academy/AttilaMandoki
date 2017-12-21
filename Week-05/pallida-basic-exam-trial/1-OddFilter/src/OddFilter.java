@@ -12,7 +12,7 @@ public class OddFilter {
   }
 
   private static ArrayList<Integer> oddFilter(List<Integer> inputList) {
-    ArrayList<Integer> resultList = new ArrayList<Integer>();
+    ArrayList<Integer> resultList = new ArrayList<>();
     for (int i = 0; i < inputList.size(); i++) {
       if (inputList.get(i) % 2 != 0) {
         resultList.add(inputList.get(i));
