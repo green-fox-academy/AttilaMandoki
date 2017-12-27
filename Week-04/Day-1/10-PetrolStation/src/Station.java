@@ -9,9 +9,13 @@ public class Station {
     this.stationGasAmount = stationGasAmount;
   }
 
-  public void refill(Car car) {
-    stationGasAmount = stationGasAmount - (car.getCapacity() - car.getCarGasAmount());
+  public int getStationGasAmount() {
+    return stationGasAmount;
+  }
 
+  public void refill(Car car) {
+    stationGasAmount -= (car.getCapacity() - car.getCarGasAmount());
+    car.setCarGasAmount(car.getCarGasAmount() + (car.getCapacity() - car.getCarGasAmount()));
   }
 }
 

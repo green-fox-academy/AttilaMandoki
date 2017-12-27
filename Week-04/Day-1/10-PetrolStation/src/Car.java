@@ -3,7 +3,7 @@ public class Car {
   private int capacity;
 
   public Car() {
-    this.carGasAmount = 29;
+    this.carGasAmount = 0;
     this.capacity = 100;
 
   }
