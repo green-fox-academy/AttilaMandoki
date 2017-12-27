@@ -13,10 +13,10 @@ public class DivideByZero {
   }
 
   public static int dividingFunction(int Divisor) {
-
-    int divisionResult = 10;
+    int divideThis = 10;
+    int divisionResult = 0;
     try {
-      divisionResult = 10 / Divisor;
+      divisionResult += (divideThis / Divisor);
     } catch (ArithmeticException exc) {
       System.out.println("Computer says no.");
     }
