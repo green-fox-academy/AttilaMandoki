@@ -81,7 +81,7 @@ public class Plant {
   public static void firstWatering() {
     int firstWatering = 40;
     if (getCurrentWaterLevel() < getMinWaterLevel()) {
-      currentWaterLevel = currentWaterLevel + firstWatering * waterConsumption;
+      currentWaterLevel = currentWaterLevel + (firstWatering * waterConsumption);
     }
   }
 
