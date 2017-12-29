@@ -44,7 +44,7 @@ public class Pirate {
   }
 
   public static void brawl() {
-        
+
   }
 }
 
