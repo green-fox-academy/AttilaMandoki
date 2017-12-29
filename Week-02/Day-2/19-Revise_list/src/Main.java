@@ -8,7 +8,7 @@ public class Main {
     // - Reverse the order of the elements in `aj`
     // - Print the elements of the reversed `aj`
 
-    int[] aj = {3, 4, 5, 6, 7};
+    int[] aj = {3, 4, 5, 6, 7, 8};
 
     System.out.println(reverseList(aj));
   }
