@@ -16,7 +16,7 @@ public class SortThatList {
       inputList.add(scanner.nextInt());
 
       for (int i = 0; i < inputList.size(); i++) {
-        for (int j = 0; j < inputList.size() - i - 1; j++) {
+        for (int j = 0; j < inputList.size() - 1; j++) {
           if (inputList.get(j) > inputList.get(j + 1)) {
             int temporary = inputList.get(j);
             inputList.set(j, inputList.get(j + 1));

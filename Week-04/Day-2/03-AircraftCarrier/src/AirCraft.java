@@ -6,7 +6,7 @@ public class AirCraft {
   protected String type;
   protected int allDamage;
 
-  public AirCraft(int currentAmmo, int maxAmmo, int baseDamage, String type) {
+   AirCraft(int currentAmmo, int maxAmmo, int baseDamage, String type) {
     this.currentAmmo = currentAmmo;
     this.maxAmmo = maxAmmo;
     this.baseDamage = baseDamage;
@@ -14,7 +14,7 @@ public class AirCraft {
     this.allDamage = allDamage;
   }
 
-  public AirCraft() {
+   AirCraft() {
     currentAmmo = 0;
     maxAmmo = 0;
     baseDamage = 0;
@@ -26,21 +26,20 @@ public class AirCraft {
     return type;
   }
 
-  public int refill(int fill) {
+  int refill(int fill) {
     if (currentAmmo == 0) {
       currentAmmo = maxAmmo;
     }
-    int remainingAmmo = fill - currentAmmo;
-    return remainingAmmo;
+    return fill - currentAmmo;
   }
 
-  public int fight() {
+   int fight() {
     int damage = baseDamage * maxAmmo;
     currentAmmo = 0;
     return damage;
   }
 
-  public String getStatus() {
+   String getStatus() {
     return ("Type: " + type + ", Ammo: " + currentAmmo + ", Base damage: " + baseDamage + ", All damage: " + fight());
   }
 }

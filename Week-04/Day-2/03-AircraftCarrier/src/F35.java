@@ -5,7 +5,7 @@ public class F35 extends AirCraft {
 
   }
 
-  public F35() {
+   F35() {
     currentAmmo = 0;
     maxAmmo = 12;
     baseDamage = 50;
