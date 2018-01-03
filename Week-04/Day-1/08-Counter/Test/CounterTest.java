@@ -3,7 +3,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CounterTest {
 
-  Counter c = new Counter();
+  private Counter c = new Counter();
 
   @Test
   void addMore() {

@@ -1,11 +1,11 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class Dictionary{
-  static Map<String,String> map;
+public class Dictionary {
+  static Map<String, String> map;
 
   public static void main(String[] args) {
-    map = new HashMap<String,String>();
+    map = new HashMap<String, String>();
     map.put("alma", "apple");
     map.put("fa", "tree");
 
