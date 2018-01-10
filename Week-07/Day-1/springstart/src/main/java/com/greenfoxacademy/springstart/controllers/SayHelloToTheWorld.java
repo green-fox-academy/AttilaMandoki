@@ -35,7 +35,7 @@ public class SayHelloToTheWorld {
     int randomHello = new Random().nextInt(hellos.length);
     String random = (hellos[randomHello]);
     int specificColor = new Random().nextInt(color.length);
-    String randomColor = (specificColor[randomHello]);
+    String randomColor = (color[specificColor]);
     model.addAttribute("name", content);
     model.addAttribute("differentHello", random);
     model.addAttribute("differentColor", randomColor);
