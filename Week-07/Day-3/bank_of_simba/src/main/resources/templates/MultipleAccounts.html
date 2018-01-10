@@ -3,15 +3,27 @@
 <head>
     <title>Bank of Simba</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
 <tbody>
 <table style="width: 30%">
-<tr th:each="animals: ${animals}">
-    <td th:text="${animals.name}" ></td>
-    <td th:text="${animals.balance}" ></td>
-    <td th:text="${animals.animalType}" ></td>
-</tr>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Balance</th>
+        <th>Animal type</th>
+    </tr>
+    <tr th:each="animals: ${animals}">
+        <td th:text="${animalsStat.count}"></td>
+        <td th:text="${animals.name}"></td>
+        <td th:text="${animals.balance}"></td>
+        <td th:text="${animals.animalType}"></td>
+    </tr>
 </table>
 </tbody>
 </body>

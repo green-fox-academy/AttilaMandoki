@@ -17,7 +17,7 @@ public class MultipleWebController {
     BankAccount accountOfPumba = new BankAccount("Pumba", 200, "warthog");
     BankAccount accountOfZazu = new BankAccount("Zazu", 400, "toucan");
     BankAccount accountOfNala = new BankAccount("Nala", 300, "lion");
-    BankAccount accountOfTimon = new BankAccount("Timon", 150, "meerkat");
+    BankAccount accountOfTimon = new BankAccount("Timon", 650, "meerkat");
 
     animals.add(accountOfScar);
     animals.add(accountOfPumba);
