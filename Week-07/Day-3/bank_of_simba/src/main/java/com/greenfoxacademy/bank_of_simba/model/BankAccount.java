@@ -5,15 +5,20 @@ public class BankAccount {
   private String name;
   private long balance;
   private String animalType;
-
+  private boolean isKing;
 
   public BankAccount() {
   }
 
-  public BankAccount(String name, long balance, String animalType) {
+  public BankAccount(String name, long balance, String animalType, boolean isKing) {
     this.name = name;
     this.balance = balance;
     this.animalType = animalType;
+    this.isKing = isKing;
+  }
+
+  public boolean isKing() {
+    return isKing;
   }
 
   public String getName() {

@@ -13,11 +13,11 @@ public class MultipleWebController {
   @RequestMapping(value = "/multiple")
   public String multipleAccount(Model model) {
     List<BankAccount> animals = new ArrayList<>();
-    BankAccount accountOfScar = new BankAccount("Scar", 500, "lion");
-    BankAccount accountOfPumba = new BankAccount("Pumba", 200, "warthog");
-    BankAccount accountOfZazu = new BankAccount("Zazu", 400, "toucan");
-    BankAccount accountOfNala = new BankAccount("Nala", 300, "lion");
-    BankAccount accountOfTimon = new BankAccount("Timon", 650, "meerkat");
+    BankAccount accountOfScar = new BankAccount("Scar", 500, "lion", false);
+    BankAccount accountOfPumba = new BankAccount("Pumba", 200, "warthog", false);
+    BankAccount accountOfZazu = new BankAccount("Zazu", 400, "toucan", false);
+    BankAccount accountOfNala = new BankAccount("Nala", 300, "lion", false);
+    BankAccount accountOfTimon = new BankAccount("Timon", 650, "meerkat", true);
 
     animals.add(accountOfScar);
     animals.add(accountOfPumba);
