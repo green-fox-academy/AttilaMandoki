@@ -2,9 +2,9 @@ package com.greenfoxacademy.bank_of_simba.model;
 
 public class BankAccount {
 
-  String name;
-  long balance;
-  String animalType;
+  private String name;
+  private long balance;
+  private String animalType;
 
 
   public BankAccount() {
@@ -20,23 +20,11 @@ public class BankAccount {
     return name;
   }
 
-  public void setName(String name) {
-    this.name = name;
-  }
-
   public long getBalance() {
     return balance;
   }
 
-  public void setBalance(long balance) {
-    this.balance = balance;
-  }
-
   public String getAnimalType() {
     return animalType;
-  }
-
-  public void setAnimalType(String animalType) {
-    this.animalType = animalType;
   }
 }

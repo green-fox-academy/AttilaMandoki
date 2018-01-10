@@ -1,10 +1,12 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
     <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-
+<p th:text="'Account holder: ' + ${name} + ', balance: '
++ ${#numbers.formatDecimal(balance, 1, 2)}
++ ' GC (golden claw), animal type: ' + ${animalType}"/>
 </body>
 </html>

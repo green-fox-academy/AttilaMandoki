@@ -11,7 +11,9 @@ public class BankWebController {
   @RequestMapping(value = "/show")
   public String simbasAccount(Model model) {
     BankAccount accountOfSimba = new BankAccount("Simba", 200, "lion");
-    model.addAttribute("simba", accountOfSimba);
+    model.addAttribute("name", accountOfSimba.getName());
+    model.addAttribute("balance", accountOfSimba.getBalance());
+    model.addAttribute("animalType", accountOfSimba.getAnimalType());
     return "BankAccount";
   }
 }
