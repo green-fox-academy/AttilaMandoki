@@ -24,8 +24,8 @@
         <td th:text="${animals.balance}"></td>
         <td th:text="${animals.animalType}"></td>
         <td>
-            <span th:if="${animal.isKing} == true" th:text="'King'" th:style="'color: orange;'"/>
-            <span th:unless="${animal.isKing} == false" th:text="'Peasant'"/>
+            <div th:if="${animal.isKing} == true" th:text="'King'" th:style="'color: orange;'"/>
+            <div th:unless="${animal.isKing} == false" th:text="'Peasant'"/>
         </td>
     </tr>
 </table>
