@@ -19,8 +19,6 @@ public class HelloBeanWorldApplication implements CommandLineRunner{
   @Override
   public void run(String... args) throws Exception {
 
-
-    helloWorld.setMessage("Hello, World!");
-    helloWorld.getMessage;
+    helloWorld.log("Hello, World!");
   }
 }
