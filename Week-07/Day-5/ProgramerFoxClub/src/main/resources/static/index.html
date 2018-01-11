@@ -6,10 +6,19 @@
     <meta charset="utf-8" />
 </head>
 <body>
-<a href="/information">Information</a>
+<ul>
+    <li><a href="#">Information</a></li>
+    <li><a href="/nutritionStore">Neutrition Store</a></li>
+    <li><a href="/trickCenter">Trick Center</a></li>
+</ul>
 <picture>
     <img src="greenfox.png" alt="Mr. Fox" style="width:auto;">
 </picture>
 <p th:text="'This is ' + ${fox.getName} + '. Currently living on ' +${getFood} + ' and ' +${getDrink} + '. He knows ' +${numberOfTricks} + ' tricks.'">
+<h1>text="Known tricks"</h1>
+<ul>
+    <li>write HTML</li>
+    <li>code in Java</li>
+</ul>
 </body>
 </html>
