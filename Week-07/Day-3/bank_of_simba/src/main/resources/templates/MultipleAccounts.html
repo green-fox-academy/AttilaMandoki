@@ -10,7 +10,6 @@
     </style>
 </head>
 <body>
-<tbody>
 <table style="width: 30%">
     <tr>
         <th>Id</th>
@@ -24,9 +23,11 @@
         <td th:text="${animals.name}"></td>
         <td th:text="${animals.balance}"></td>
         <td th:text="${animals.animalType}"></td>
-        <td th:if="${animal.isKing} == false" th:text="'true'", th:style="'color:orange;'" />
+        <td>
+            <span th:if="${animal.isKing} == true" th:text="'King'" th:style="'color: orange;'"/>
+            <span th:unless="${animal.isKing} == false" th:text="'Peasant'"/>
+        </td>
     </tr>
 </table>
-</tbody>
 </body>
 </html>
