@@ -1,4 +1,4 @@
-package com.greenfoxacademy.programmerfoxclub.foxConfig;
+package com.greenfoxacademy.programmerfoxclub.configuration;
 
 import com.greenfoxacademy.programmerfoxclub.model.Fox;
 import org.springframework.context.annotation.Bean;

@@ -18,14 +18,14 @@
         <th>Animal type</th>
         <th>King</th>
     </tr>
-    <tr th:each="animals: ${animals}">
-        <td th:text="${animalsStat.count}"></td>
-        <td th:text="${animals.name}"></td>
-        <td th:text="${animals.balance}"></td>
-        <td th:text="${animals.animalType}"></td>
+    <tr th:each="animal: ${animals}">
+        <td th:text="${animalStat.count}"></td>
+        <td th:text="${animal.name}"></td>
+        <td th:text="${animal.balance}"></td>
+        <td th:text="${animal.animalType}"></td>
         <td>
-            <div th:if="${animal.isKing} == true" th:text="'King'" th:style="'color: orange;'"/>
-            <div th:unless="${animal.isKing} == false" th:text="'Peasant'"/>
+            <div th:if="${animal.isKing()} == true" th:text="'King'" th:style="'color: orange;'"/>
+            <div th:unless="${animal.isKing()} == true" th:text="'Peasant'"/>
         </td>
     </tr>
 </table>
