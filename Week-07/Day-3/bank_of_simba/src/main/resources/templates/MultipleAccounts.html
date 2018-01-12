@@ -5,26 +5,26 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <style>
         table, th, td {
-            border: 1px solid black;
+            border: 2px solid darkblue;
         }
     </style>
 </head>
 <body>
-<table style="width: 30%">
+<table style="background-color: lightcoral; width:50%; height:300px; font-size: large">
     <tr>
         <th>Id</th>
         <th>Name</th>
-        <th>Balance</th>
-        <th>Animal type</th>
+        <th>Balance (golden claw)</th>
+        <th>Animal family</th>
         <th>King</th>
     </tr>
-    <tr th:each="animal: ${animals}">
+    <tr style="background-color:orange;" align="center" th:each="animal: ${animals}">
         <td th:text="${animalStat.count}"></td>
         <td th:text="${animal.name}"></td>
-        <td th:text="${animal.balance}"></td>
+        <td th:text="${#numbers.formatDecimal(animal.balance, 1, 2)} + ' GC'"></td>
         <td th:text="${animal.animalType}"></td>
         <td>
-            <div th:if="${animal.isKing()} == true" th:text="'King'" th:style="'color: orange;'"/>
+            <div th:if="${animal.isKing()} == true" th:text="'King'" th:style="'background-color: orangered; color: white;'"/>
             <div th:unless="${animal.isKing()} == true" th:text="'Peasant'"/>
         </td>
     </tr>
