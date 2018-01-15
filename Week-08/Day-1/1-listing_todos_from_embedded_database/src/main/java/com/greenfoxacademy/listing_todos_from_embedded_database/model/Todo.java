@@ -1,23 +1,25 @@
 package com.greenfoxacademy.listing_todos_from_embedded_database.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
-public class ToDo {
+public class Todo {
 
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
   private int id;
   private String title;
   private boolean isUrgent;
-  private boolean isDOne;
+  private boolean isDone;
 
-  public ToDo() {
+  public Todo() {
   }
 
-  public ToDo(int id, String title, boolean isUrgent, boolean isDOne) {
-    this.id = id;
+  public Todo(String title) {
     this.title = title;
-    this.isUrgent = isUrgent;
-    this.isDOne = isDOne;
   }
 
   public int getId() {
@@ -44,11 +46,11 @@ public class ToDo {
     isUrgent = urgent;
   }
 
-  public boolean isDOne() {
-    return isDOne;
+  public boolean isDone() {
+    return isDone;
   }
 
-  public void setDOne(boolean DOne) {
-    isDOne = DOne;
+  public void setDone(boolean done) {
+    isDone = done;
   }
 }
