@@ -3,12 +3,27 @@
 <head>
     <link rel="stylesheet" th:href="@{/style.css}" />
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"/>
     <title>This is my first todo</title>
 </head>
 <body>
     <h1>Todos for today:</h1>
-    <ul>
-        <li th:each="todos : ${todoList}" th:text="${todos.title}"/>
-    </ul>
+    <table style="width:30%; border: 2px solid; font-size: large">
+        <tr align="center">
+            <th>ID</th>
+            <th>TASK</th>
+            <th>URGENT?</th>
+            <th>DONE?</th>
+        </tr>
+        <tr align="center" th:each="todos : ${todoList}">
+            <td th:text="${todos.id}"/>
+            <td th:text="${todos.title}"/>
+            <td th:text="${todos.isUrgent}"/>
+            <td th:text="${todos.isDone}"/>
+        </tr>
+        <!-- <ul>
+            <li th:each="todos : ${todoList}" th:text="${todos.title}"/>
+        </ul> -->
+    </table>
 </body>
 </html>

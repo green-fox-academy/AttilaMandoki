@@ -19,8 +19,10 @@ public class ConnectionWithMysqlApplication implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
-    myTodo.save(new Todo("Pack lunch"));
-    myTodo.save(new Todo("Grab charger"));
-    myTodo.save(new Todo("Buy snacks"));
+    myTodo.save(new Todo("Pack lunch", false, true));
+    myTodo.save(new Todo("Grab charger", true, false));
+    myTodo.save(new Todo("Buy snacks", false, false));
+    myTodo.save(new Todo("Do homework", true, true));
+    myTodo.save(new Todo("Swim harder",true, false));
   }
 }

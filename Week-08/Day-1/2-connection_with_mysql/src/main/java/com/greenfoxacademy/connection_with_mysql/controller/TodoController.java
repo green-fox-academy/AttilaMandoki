@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -21,6 +22,19 @@ public class TodoController {
   public String list(Model model) {
     List<Todo> todos = (List<Todo>) todoRepository.findAll();
     model.addAttribute("todoList", todos);
+    return "todo";
+  }
+
+  @GetMapping({"/isactive"})
+  public String isActive(Model model) {
+    List<Todo> stillActive = new ArrayList<>();
+    List<Todo> todos = (List<Todo>) todoRepository.findAll();
+    for (Todo todo : todos) {
+      if (todo.getIsDone() == false) {
+        stillActive.add(todo);
+      }
+    }
+    model.addAttribute("todoList", stillActive);
     return "todo";
   }
 }
