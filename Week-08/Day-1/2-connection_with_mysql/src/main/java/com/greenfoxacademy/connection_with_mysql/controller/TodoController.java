@@ -46,13 +46,12 @@ public class TodoController {
 
   @GetMapping("/add")
   public String addTask(@ModelAttribute Todo todo) {
-    todoService.addTask(todo);
     return "add";
   }
 
-  @PostMapping("/todo/submit")
-  public String submitNewTodo(Todo todo) {
+  @PostMapping("/add")
+  public String submitNewTodo(@ModelAttribute Todo todo) {
     todoRepository.save(todo);
-    return "redirect:/list";
+    return "redirect:/todo/list";
   }
 }

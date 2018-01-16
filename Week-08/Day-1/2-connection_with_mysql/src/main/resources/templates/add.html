@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>Add new task:</h1>
-    <form action="#" th:action="@{/todo/submit}" th:object="${todo}" method="post">
+    <form action="#" th:action="@{/todo/add}" th:object="${todo}" method="post">
         <input type="text" name="task" th:field="*{title}"/>
         <input type="submit" value="Submit"/>
     </form>
