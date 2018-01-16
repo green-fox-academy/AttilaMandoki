@@ -10,5 +10,7 @@ public interface TodoService {
 
   List<Todo> getAllTodo();
   Todo getTodoById(int id);
-
+  void addTask(Todo todo);
+  void deleteTask(int id);
+  void editTask(Todo todo);
 }
