@@ -11,7 +11,7 @@ import java.util.List;
 public class TodoServiceImpl implements TodoService {
 
   @Autowired
-  TodoRepository todoRepository
+  TodoRepository todoRepository;
 
   @Override
   public List<Todo> getAllTodo() {

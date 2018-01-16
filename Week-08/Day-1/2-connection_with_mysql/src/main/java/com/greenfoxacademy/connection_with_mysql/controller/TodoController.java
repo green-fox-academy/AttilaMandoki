@@ -1,5 +1,7 @@
 package com.greenfoxacademy.connection_with_mysql.controller;
 
+import com.greenfoxacademy.connection_with_mysql.Service.TodoService;
+import com.greenfoxacademy.connection_with_mysql.Service.TodoServiceImpl;
 import com.greenfoxacademy.connection_with_mysql.model.Todo;
 import com.greenfoxacademy.connection_with_mysql.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,8 @@ import java.util.List;
 @RequestMapping("/todo")
 public class TodoController {
 
+  @Autowired
+  TodoService todoService;
   @Autowired
   TodoRepository todoRepository;
 
@@ -40,9 +44,15 @@ public class TodoController {
     return "todo";
   }
 
-  @PostMapping("/add")
+  @GetMapping("/add")
   public String addTask(@ModelAttribute Todo todo) {
-    todoService.addTask(Todo);
-    return "redirect:";
+    todoService.addTask(todo);
+    return "add";
+  }
+
+  @PostMapping("/todo/submit")
+  public String submitNewTodo(Todo todo) {
+    todoRepository.save(todo);
+    return "redirect:/list";
   }
 }
