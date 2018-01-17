@@ -17,4 +17,6 @@ public interface TodoService {
   void deleteTask(int id);
 
   void editTask(Todo todo);
+
+  void taskSearch(String title);
 }

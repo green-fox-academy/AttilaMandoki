@@ -71,4 +71,9 @@ public class TodoController {
     todoService.deleteTask(id);
     return new ModelAndView("redirect:/todo/list");
   }
+
+  @RequestMapping("/taskSearch/{id}")
+    public taskSearch(@PathVariable(value = "title") String title) {
+    return todoService.taskSearch(title);
+  }
 }
