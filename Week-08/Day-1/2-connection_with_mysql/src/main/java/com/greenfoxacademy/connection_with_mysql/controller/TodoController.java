@@ -49,13 +49,13 @@ public class TodoController {
 
   @PostMapping("/add")
   public String submitNewTodo(@ModelAttribute Todo todo) {
-    todoRepository.save(todo);
+    todoService.addTask(todo);
     return "redirect:/todo/list";
   }
 
   @PostMapping("/delete/{id}")
   public ModelAndView delete(@PathVariable Integer id) {
-    todoRepository.delete(id);
-    return new ModelAndView("redirect:/");
+    todoService.deleteTask(id);
+    return new ModelAndView("redirect:/todo/list");
   }
 }

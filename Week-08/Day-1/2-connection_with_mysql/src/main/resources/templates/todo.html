@@ -19,7 +19,7 @@
         <th>DELET</th>
         <th>UPDATE</th>
     </tr>
-    <tr align="center" th:each="todos : ${todoList}">
+    <tr align="center" th:each="todos : ${todoList}" th:object="${todos}">
         <td th:text="${todos.id}"/>
         <td th:text="${todos.title}"/>
         <td th:text="${todos.isUrgent}"/>
