@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+          integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"/>
+    <title>Update your tasks</title>
+</head>
+<body>
+<form action="#" th:action="@{/todo/update/} + ${id}" th:object="${todos}" method="post">
+    <div>
+        <label for="title">Todo description: </label>
+        <input id="title" type="text" th:field="*{title}"/>
+    </div>
+    <div>
+        <label for="isUrgent">Is it urgent? </label>
+        <input id="isUrgent" type="checkbox" th:field="*{isUrgent}"/>
+    </div>
+    <div>
+        <label for="isDone">Is it done? </label>
+        <input id="isDone" type="checkbox" th:field="*{isDone}"/>
+    </div>
+    <div>
+        <input type="submit" value="Submit"/>
+    </div>
+</form>
+</body>
+</html>

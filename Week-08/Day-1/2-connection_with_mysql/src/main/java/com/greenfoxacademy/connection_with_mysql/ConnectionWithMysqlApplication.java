@@ -23,6 +23,6 @@ public class ConnectionWithMysqlApplication implements CommandLineRunner {
     myTodo.save(new Todo("Grab charger", true, false));
     myTodo.save(new Todo("Buy snacks", false, false));
     myTodo.save(new Todo("Do homework", true, true));
-    myTodo.save(new Todo("Swim harder",true, false));
+    myTodo.save(new Todo("Swim harder", true, false));
   }
 }

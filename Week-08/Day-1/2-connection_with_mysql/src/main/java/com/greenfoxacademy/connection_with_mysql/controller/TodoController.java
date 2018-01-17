@@ -1,7 +1,6 @@
 package com.greenfoxacademy.connection_with_mysql.controller;
 
 import com.greenfoxacademy.connection_with_mysql.Service.TodoService;
-import com.greenfoxacademy.connection_with_mysql.Service.TodoServiceImpl;
 import com.greenfoxacademy.connection_with_mysql.model.Todo;
 import com.greenfoxacademy.connection_with_mysql.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +33,7 @@ public class TodoController {
     List<Todo> stillActive = new ArrayList<>();
     List<Todo> todos = (List<Todo>) todoRepository.findAll();
     for (Todo todo : todos) {
-      if (todo.getIsDone() == false) {
+      if (!todo.getIsDone()) {
         stillActive.add(todo);
       }
     }
@@ -50,6 +49,20 @@ public class TodoController {
   @PostMapping("/add")
   public String submitNewTodo(@ModelAttribute Todo todo) {
     todoService.addTask(todo);
+    return "redirect:/todo/list";
+  }
+
+  @GetMapping("/update/{id}")
+  public String editTask(@PathVariable Integer id, Model model) {
+    Todo todo = todoService.getTodoById(id);
+    model.addAttribute("todos", todo);
+    return "/update";
+  }
+
+  @PostMapping("/update/{id}")
+  public String editingSite(@PathVariable Integer id, @ModelAttribute Todo todo) {
+    todo.setId(id);
+    todoService.editTask(todo);
     return "redirect:/todo/list";
   }
 

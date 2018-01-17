@@ -24,16 +24,16 @@
         <td th:text="${todos.title}"/>
         <td th:text="${todos.isUrgent}"/>
         <td th:text="${todos.isDone}"/>
-    <td>
-        <form action="#" th:action="@{/todo/delete/} + *{id}" method="post">
-            <input class="button" th:value="Delete" type="submit"/>
-        </form>
-    </td>
-    <td>
-        <form action="#" th:action="@{/todo/update/} + *{id}" method="post">
-            <input class="button" th:value="Update" type="submit"/>
-        </form>
-    </td>
+        <td>
+            <form action="#" th:action="@{/todo/delete/} + *{id}" method="post">
+                <input class="button" th:value="Delete" type="submit"/>
+            </form>
+        </td>
+        <td>
+            <form action="#" th:action="@{/todo/update/} + *{id}" method="get">
+                <input class="button" th:value="Update" type="submit"/>
+            </form>
+        </td>
     </tr>
 </table>
 </body>
