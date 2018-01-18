@@ -12,6 +12,14 @@
 <form action="#" th:action="@{/todo/add}" th:object="${todo}" method="post">
     <input type="text" name="task" th:field="*{title}"/>
     <input type="submit" value="Submit"/>
+    <div>
+        <label for="isUrgent">Is it urgent? </label>
+        <input id="isUrgent" type="checkbox" th:field="*{isUrgent}"/>
+    </div>
+    <div>
+        <label for="isDone">Is it done? </label>
+        <input id="isDone" type="checkbox" th:field="*{isDone}"/>
+    </div>
 </form>
 </body>
 </html>
