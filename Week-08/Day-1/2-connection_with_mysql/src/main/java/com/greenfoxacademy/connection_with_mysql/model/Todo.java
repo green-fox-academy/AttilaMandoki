@@ -14,19 +14,39 @@ public class Todo {
   private String title;
   private boolean isUrgent;
   private boolean isDone;
+  private String assignee;
+  private String email;
 
   public Todo() {
   }
 
-  public Todo(String title, boolean isUrgent, boolean isDone) {
+  public Todo(String title, boolean isUrgent, boolean isDone, String assignee, String email) {
     this.title = title;
     this.isUrgent = isUrgent;
     this.isDone = isDone;
+    this.assignee = assignee;
+    this.email = email;
   }
 
   public Todo(String title) {
     this.title = title;
 
+  }
+
+  public String getAssignee() {
+    return assignee;
+  }
+
+  public void setAssignee(String assignee) {
+    this.assignee = assignee;
+  }
+
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
   }
 
   public int getId() {

@@ -14,7 +14,7 @@
         <input type="text" name="search" placeholder="Search your todo..."/>
         <input type="submit" value="Submit"/>
     </form>
-<table style="width:40%; border: 2px solid; font-size: large">
+<table style="width:50%; border: 2px solid; font-size: large">
     <tr align="center">
         <th>ID</th>
         <th>TASK</th>
@@ -22,6 +22,8 @@
         <th>DONE?</th>
         <th>DELET</th>
         <th>UPDATE</th>
+        <th>ASSIGNEE</th>
+        <th>EMAIL</th>
     </tr>
     <tr align="center" th:each="todos : ${todoList}" th:object="${todos}">
         <td th:text="${todos.id}"/>
@@ -38,6 +40,8 @@
                 <input class="button" th:value="Update" type="submit"/>
             </form>
         </td>
+        <td th:text="${todos.assignee}"/>
+        <td th:text="${todos.email}"/>
     </tr>
 </table>
 </body>
