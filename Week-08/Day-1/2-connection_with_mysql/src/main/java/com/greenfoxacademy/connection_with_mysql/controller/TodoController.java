@@ -78,4 +78,9 @@ public class TodoController {
     model.addAttribute("todoList", findAllByTitleContains);
     return "todo";
   }
+
+  @GetMapping("/assignees")
+  public String assigneeList(@ModelAttribute Todo todo) {
+    return "assignees";
+  }
 }

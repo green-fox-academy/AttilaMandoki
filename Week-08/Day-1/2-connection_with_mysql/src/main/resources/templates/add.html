@@ -7,7 +7,7 @@
           integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"/>
     <title>New task sheet</title>
 </head>
-<body>
+<body style="margin:1% 1%">
 <h1>Add new task:</h1>
 <form action="#" th:action="@{/todo/add}" th:object="${todo}" method="post">
     <input type="text" name="task" placeholder="Enter new todo..." th:field="*{title}"/>
