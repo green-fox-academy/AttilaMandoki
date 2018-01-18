@@ -17,6 +17,11 @@ public class Todo {
   private String assignee;
   private String email;
 
+  public Todo(String assignee, String email) {
+    this.assignee = assignee;
+    this.email = email;
+  }
+
   public Todo() {
   }
 
