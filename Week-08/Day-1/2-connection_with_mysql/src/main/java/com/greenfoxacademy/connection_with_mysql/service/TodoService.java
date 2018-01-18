@@ -1,4 +1,4 @@
-package com.greenfoxacademy.connection_with_mysql.Service;
+package com.greenfoxacademy.connection_with_mysql.service;
 
 import com.greenfoxacademy.connection_with_mysql.model.Todo;
 import org.springframework.stereotype.Service;
@@ -18,5 +18,5 @@ public interface TodoService {
 
   void editTask(Todo todo);
 
-  void taskSearch(String title);
+  List<Todo> taskSearch(String title);
 }

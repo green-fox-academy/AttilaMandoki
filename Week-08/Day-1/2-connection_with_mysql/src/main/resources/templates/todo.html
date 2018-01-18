@@ -10,10 +10,10 @@
 <body>
 <h1>Todos for today:</h1>
 <a th:href="@{/todo/add}">Submit new task</a>
-    <div>
-        <input type="text" id="myInput" placeholder="Search your todo..."/>
-        <input type="submit" value="Search here"/>
-    </div>
+    <form th:action="@{search}" method="get">
+        <input type="text" name="search" placeholder="Search your todo..."/>
+        <input type="submit" value="Submit"/>
+    </form>
 <table style="width:40%; border: 2px solid; font-size: large">
     <tr align="center">
         <th>ID</th>

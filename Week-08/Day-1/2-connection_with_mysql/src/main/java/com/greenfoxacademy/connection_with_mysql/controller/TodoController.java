@@ -1,6 +1,6 @@
 package com.greenfoxacademy.connection_with_mysql.controller;
 
-import com.greenfoxacademy.connection_with_mysql.Service.TodoService;
+import com.greenfoxacademy.connection_with_mysql.service.TodoService;
 import com.greenfoxacademy.connection_with_mysql.model.Todo;
 import com.greenfoxacademy.connection_with_mysql.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,8 +72,10 @@ public class TodoController {
     return new ModelAndView("redirect:/todo/list");
   }
 
-  @RequestMapping("/taskSearch/{id}")
-    public taskSearch(@PathVariable(value = "title") String title) {
-    return todoService.taskSearch(title);
+  @GetMapping("/search")
+  public String search(@RequestParam(value = "search", required = false) String search, Model model) {
+    List<Todo> findAllByTitleContains = todoService.taskSearch(search);
+    model.addAttribute("todoList", findAllByTitleContains);
+    return "todo";
   }
 }

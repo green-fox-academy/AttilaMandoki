@@ -1,4 +1,4 @@
-package com.greenfoxacademy.connection_with_mysql.Service;
+package com.greenfoxacademy.connection_with_mysql.service;
 
 import com.greenfoxacademy.connection_with_mysql.model.Todo;
 import com.greenfoxacademy.connection_with_mysql.repository.TodoRepository;
@@ -36,5 +36,10 @@ public class TodoServiceImpl implements TodoService {
   @Override
   public void editTask(Todo todo) {
     todoRepository.save(todo);
+  }
+
+  @Override
+  public List<Todo> taskSearch(String title) {
+    return todoRepository.findAllByTitleContains(title);
   }
 }

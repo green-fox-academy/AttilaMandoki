@@ -8,6 +8,5 @@ import java.util.List;
 
 @Repository
 public interface TodoRepository extends CrudRepository<Todo, Integer> {
-
-  List<Todo> findAllByTitle(String title);
+  List<Todo> findAllByTitleContains(String title);
 }
