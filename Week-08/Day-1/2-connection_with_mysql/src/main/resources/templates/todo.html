@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:color="http://www.w3.org/1999/xhtml">
 <head>
     <link rel="stylesheet" th:href="@{/style.css}"/>
     <meta charset="utf-8"/>
@@ -10,9 +10,9 @@
 <body style="margin:1% 1%; position: relative; background-image: url(https://hdwallsource.com/img/2014/1/fox-wallpaper-4207-4249-hd-wallpapers.jpg);
 background-repeat: no-repeat; background-size:105%">
 <h1>Todos for today:</h1>
-<a th:href="@{/todo/add}">Submit new task</a>
+<a href="#" class="badge badge-warning" th:href="@{/todo/add}">Submit new task</a>
 <div>
-    <a th:href="@{/todo/assignees}">List of assignees</a>
+    <a href="#" class="badge badge-warning" th:href="@{/todo/assignees}">List of assignees</a>
 </div>
 <form th:action="@{search}" method="get">
     <div class="input-group mb-2">

@@ -19,7 +19,4 @@ public interface TodoService {
   void editTask(Todo todo);
 
   List<Todo> taskSearch(String title);
-
-  //List<Todo> assigneesList();
-
 }

@@ -1,11 +1,9 @@
 package com.greenfoxacademy.connection_with_mysql.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "todos")
 public class Todo {
 
   @Id
@@ -14,44 +12,25 @@ public class Todo {
   private String title;
   private boolean isUrgent;
   private boolean isDone;
-  private String assignee;
-  private String email;
 
-  public Todo(String assignee, String email) {
-    this.assignee = assignee;
-    this.email = email;
-  }
+  @OneToOne(fetch = FetchType.EAGER)
+  private Assignee assignee;
 
   public Todo() {
   }
 
-  public Todo(String title, boolean isUrgent, boolean isDone, String assignee, String email) {
+  public Todo(String title, boolean isUrgent, boolean isDone, String assigneeName, String email) {
     this.title = title;
     this.isUrgent = isUrgent;
     this.isDone = isDone;
-    this.assignee = assignee;
-    this.email = email;
+    this.assignee = new Assignee();
+    this.assignee.setName(assigneeName);
+    this.assignee.setEmail(email);
   }
 
   public Todo(String title) {
     this.title = title;
 
-  }
-
-  public String getAssignee() {
-    return assignee;
-  }
-
-  public void setAssignee(String assignee) {
-    this.assignee = assignee;
-  }
-
-  public String getEmail() {
-    return email;
-  }
-
-  public void setEmail(String email) {
-    this.email = email;
   }
 
   public int getId() {
@@ -84,5 +63,13 @@ public class Todo {
 
   public void setIsDone(boolean done) {
     isDone = done;
+  }
+
+  public Assignee getAssignee() {
+    return assignee;
+  }
+
+  public void setAssignee(Assignee assignee) {
+    this.assignee = assignee;
   }
 }
