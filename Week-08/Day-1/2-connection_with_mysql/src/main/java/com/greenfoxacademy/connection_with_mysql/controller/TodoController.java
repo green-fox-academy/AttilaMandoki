@@ -78,12 +78,4 @@ public class TodoController {
     model.addAttribute("todoList", findAllByTitleContains);
     return "todo";
   }
-
-  @GetMapping("/assignees")
-  public String assigneesList(@RequestParam(value = "assignee", required = false) String assignee,
-                              @RequestParam(value = "email", required = false) String email, Model model) {
-    List<Todo> findAllByAssigneeAndEmail = todoService.assigneesList();
-    model.addAttribute("todoList", findAllByAssigneeAndEmail);
-    return "assignees";
-  }
 }

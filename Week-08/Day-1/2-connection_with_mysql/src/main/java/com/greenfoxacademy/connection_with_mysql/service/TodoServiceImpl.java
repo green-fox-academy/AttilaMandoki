@@ -43,8 +43,8 @@ public class TodoServiceImpl implements TodoService {
     return todoRepository.findAllByTitleContains(title);
   }
 
-  @Override
-  public List<Todo> assigneesList() {
-    return (List) todoRepository.findAll();
-  }
+//  @Override
+//  public List<Todo> assigneesList() {
+//    return (List) todoRepository.findAll();
+//  }
 }
