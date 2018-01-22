@@ -11,7 +11,7 @@ public class Assignee {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  private int assignee_id;
+  private int id;
   private String name;
   private String email;
 

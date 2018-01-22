@@ -64,12 +64,4 @@ public class Todo {
   public void setIsDone(boolean done) {
     isDone = done;
   }
-
-  public Assignee getAssignee() {
-    return assignee;
-  }
-
-  public void setAssignee(Assignee assignee) {
-    this.assignee = assignee;
-  }
 }

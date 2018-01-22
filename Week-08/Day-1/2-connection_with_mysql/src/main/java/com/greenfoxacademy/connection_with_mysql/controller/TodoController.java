@@ -1,8 +1,8 @@
 package com.greenfoxacademy.connection_with_mysql.controller;
 
-import com.greenfoxacademy.connection_with_mysql.service.TodoService;
 import com.greenfoxacademy.connection_with_mysql.model.Todo;
 import com.greenfoxacademy.connection_with_mysql.repository.TodoRepository;
+import com.greenfoxacademy.connection_with_mysql.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -78,6 +78,4 @@ public class TodoController {
     model.addAttribute("todoList", findAllByTitleContains);
     return "todo";
   }
-
-
 }

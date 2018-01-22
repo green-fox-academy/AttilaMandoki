@@ -11,7 +11,7 @@ public interface AssigneeService {
 
   void addEmail(Assignee email);
 
-  void deleteAssignee(int assigneeID);
+  void deleteAssignee(int id);
 
   void editAssignee(Assignee assignee);
 
