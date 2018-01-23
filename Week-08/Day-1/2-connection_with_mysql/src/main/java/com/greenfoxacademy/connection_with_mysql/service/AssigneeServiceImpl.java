@@ -13,24 +13,23 @@ public class AssigneeServiceImpl implements AssigneeService {
   @Autowired
   AssigneeRepository assigneeRepository;
 
-  @Override
-  public List<Assignee> getAllTodo() {
-    return (List<Assignee>) AssigneeRepository.findAll();
+  public List<Assignee> findAll() {
+    return (List<Assignee>) assigneeRepository.findAll();
   }
 
   @Override
   public void addAssignee(Assignee assignee) {
-    AssigneeRepository.save(assignee);
+    assigneeRepository.save(assignee);
   }
 
   @Override
   public void addEmail(Assignee email) {
-    AssigneeRepository.save(email);
+    assigneeRepository.save(email);
   }
 
   @Override
-  public void deleteAssignee(int id) {
-    AssigneeRepository.delete(id);
+  public void deleteAssignee(int assignee_id) {
+    assigneeRepository.delete(assignee_id);
   }
 
   @Override

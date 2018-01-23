@@ -33,7 +33,7 @@ public class TodoController {
     List<Todo> stillActive = new ArrayList<>();
     List<Todo> todos = (List<Todo>) todoRepository.findAll();
     for (Todo todo : todos) {
-      if (!todo.getIsDone()) {
+      if (!todo.isDone()) {
         stillActive.add(todo);
       }
     }

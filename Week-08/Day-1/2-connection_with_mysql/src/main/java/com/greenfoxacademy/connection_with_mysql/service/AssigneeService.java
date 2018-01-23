@@ -4,6 +4,8 @@ import com.greenfoxacademy.connection_with_mysql.model.Assignee;
 import com.greenfoxacademy.connection_with_mysql.model.Todo;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public interface AssigneeService {
 
@@ -11,8 +13,10 @@ public interface AssigneeService {
 
   void addEmail(Assignee email);
 
-  void deleteAssignee(int id);
+  void deleteAssignee(int assignee_id);
 
   void editAssignee(Assignee assignee);
+
+  List<Assignee> findAll();
 
 }

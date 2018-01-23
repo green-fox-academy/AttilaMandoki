@@ -13,12 +13,12 @@ background-repeat: no-repeat; background-size:105%">
 <form action="#" th:action="@{/todo/add}" th:object="${todo}" method="post">
     <input type="text" name="task" placeholder="Enter new todo..." th:field="*{title}"/>
     <div>
-        <label for="isUrgent">Is it urgent? </label>
-        <input id="isUrgent" type="checkbox" th:field="*{isUrgent}"/>
+        <label for="urgent">Is it urgent? </label>
+        <input id="urgent" type="checkbox" th:field="*{urgent}"/>
     </div>
     <div>
-        <label for="isDone">Is it done? </label>
-        <input id="isDone" type="checkbox" th:field="*{isDone}"/>
+        <label for="done">Is it done? </label>
+        <input id="done" type="checkbox" th:field="*{done}"/>
     </div>
     <div>
         <input type="submit" value="Submit"/>

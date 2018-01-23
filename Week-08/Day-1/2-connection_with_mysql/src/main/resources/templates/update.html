@@ -9,7 +9,7 @@
 </head>
 <body style="margin:1% 1%; position: relative; background-image: url(https://hdwallsource.com/img/2014/1/fox-wallpaper-4207-4249-hd-wallpapers.jpg);
 background-repeat: no-repeat; background-size:105%">
-<form action="#" th:action="@{/todo/update/} + ${id}" th:object="${todos}" method="post">
+<form action="#" th:action="@{/todo/update/} + ${assignee_id}" th:object="${todos}" method="post">
     <div>
         <label for="title">Todo description: </label>
         <input id="title" type="text" th:field="*{title}"/>

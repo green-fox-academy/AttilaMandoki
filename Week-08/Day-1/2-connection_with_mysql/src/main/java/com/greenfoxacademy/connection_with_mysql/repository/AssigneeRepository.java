@@ -10,5 +10,5 @@ import java.util.List;
 public interface AssigneeRepository extends CrudRepository<Assignee, Integer> {
   List<Assignee> findAllByIdContains(Integer id);
   List<Assignee> findAllByEmailContains(String email);
-  List<Assignee> findAll(String id, String email);
+  List<Assignee> findAll();
 }
