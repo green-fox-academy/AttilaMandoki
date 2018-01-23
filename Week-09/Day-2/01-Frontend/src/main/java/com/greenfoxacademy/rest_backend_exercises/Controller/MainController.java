@@ -14,6 +14,10 @@ public class MainController {
 
   @GetMapping(value = "/doubling")
   public Doubling returnInput(@RequestParam(value = "input", required = false) Integer input) {
-    return new Doubling(input);
+    if (input != null) {
+      return new Doubling(input);
+    } else {
+      return null;
+    }
   }
 }
