@@ -1,10 +1,12 @@
 package com.greenfoxacademy.rest_backend_exercises.Controller;
 
+import com.greenfoxacademy.rest_backend_exercises.Model.AppendA;
 import com.greenfoxacademy.rest_backend_exercises.Model.Doubling;
 import com.greenfoxacademy.rest_backend_exercises.Model.ErrorMessage;
 import com.greenfoxacademy.rest_backend_exercises.Model.Greeter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,6 +34,15 @@ public class MainController {
       return new ErrorMessage("Please provide a title!");
     } else {
       return new Greeter(name, title);
+    }
+  }
+
+  @GetMapping(value = "/appenda/{appendable}")
+  public Object appendA(@PathVariable("appendable") String appendable) {
+    if (appendable != null) {
+      return new AppendA();
+    } else {
+      return new ErrorMessage("Please enter a word!");
     }
   }
 }
