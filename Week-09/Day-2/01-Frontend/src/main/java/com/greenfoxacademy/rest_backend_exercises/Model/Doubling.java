@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Setter
 @NoArgsConstructor
 @Component
-public class Doubling {
+public class Doubling implements MainModel {
   private Integer received;
   private Integer result;
 
