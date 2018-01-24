@@ -2,6 +2,7 @@ package com.greenfoxacademy.rest_backend_exercises.Controller;
 
 import com.greenfoxacademy.rest_backend_exercises.Model.Doubling;
 import com.greenfoxacademy.rest_backend_exercises.Model.ErrorMessage;
+import com.greenfoxacademy.rest_backend_exercises.Model.Greeter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,7 +31,7 @@ public class MainController {
     } else if (title == null) {
       return new ErrorMessage("Please provide a title!");
     } else {
-      return greeter(name, title);
+      return new Greeter(name, title);
     }
   }
 }

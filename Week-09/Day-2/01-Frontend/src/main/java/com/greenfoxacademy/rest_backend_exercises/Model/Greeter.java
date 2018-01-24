@@ -1,10 +1,14 @@
 package com.greenfoxacademy.rest_backend_exercises.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class Greeter implements MainModel {
 
+  @JsonIgnore
   private String name;
+  @JsonIgnore
   private String title;
-  private String message;
+  private String welcome_message;
 
   public Greeter() {
   }
@@ -12,7 +16,7 @@ public class Greeter implements MainModel {
   public Greeter(String name, String title) {
     this.name = name;
     this.title = title;
-    this.message = "Oh, hi there " + name + ", my dear " + title + "!";
+    this.welcome_message = "Oh, hi there " + name + ", my dear " + title + "!";
   }
 
   public String getName() {
@@ -31,11 +35,11 @@ public class Greeter implements MainModel {
     this.title = title;
   }
 
-  public String getMessage() {
-    return message;
+  public String getWelcome_message() {
+    return welcome_message;
   }
 
-  public void setMessage(String message) {
-    this.message = message;
+  public void setWelcome_message(String welcome_message) {
+    this.welcome_message = welcome_message;
   }
 }
