@@ -1,4 +1,6 @@
-package com.greenfoxacademy.rest_backend_exercises.Model;
+package com.greenfoxacademy.rest_backend_exercises.Model.Message;
+
+import com.greenfoxacademy.rest_backend_exercises.Model.MainModel;
 
 public class ErrorMessage implements MainModel {
   String error;

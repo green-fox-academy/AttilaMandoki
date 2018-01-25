@@ -1,6 +1,6 @@
 package com.greenfoxacademy.rest_backend_exercises.Model;
 
-public class AppendA {
+public class AppendA implements MainModel {
 
   private String appendable;
   private String appended;
