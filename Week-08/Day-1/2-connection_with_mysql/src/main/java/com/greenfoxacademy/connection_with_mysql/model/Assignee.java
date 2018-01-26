@@ -14,15 +14,15 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "assignee")
+//@Table(name = "assignee")
 public class Assignee {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  private int assignee_id;
+  private int id;
   private String name;
   private String email;
 
-  @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, fetch = FetchType.EAGER, mappedBy = "assignee_id")
+  @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, fetch = FetchType.EAGER, mappedBy = "assignee")
   private List<Todo> todos;
 }
