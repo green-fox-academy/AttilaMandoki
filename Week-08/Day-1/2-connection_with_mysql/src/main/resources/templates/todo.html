@@ -33,17 +33,17 @@ background-repeat: no-repeat; background-size:105%">
         <th>EMAIL</th>
     </tr>
     <tr align="center" th:each="todos : ${todoList}" th:object="${todos}">
-        <td th:text="${todos.assignee_id}"/>
+        <td th:text="${todos.id}"/>
         <td th:text="${todos.title}"/>
-        <td th:text="${todos.isUrgent}"/>
-        <td th:text="${todos.isDone}"/>
+        <td th:text="${todos.urgent}"/>
+        <td th:text="${todos.done}"/>
         <td>
-            <form action="#" th:action="@{/todo/delete/} + *{assignee_id}" method="post">
+            <form action="#" th:action="@{/todo/delete/} + *{id}" method="post">
                 <input class="btn btn-warning" th:value="Delete" type="submit"/>
             </form>
         </td>
         <td>
-            <form action="#" th:action="@{/todo/update/} + *{assignee_id}" method="get">
+            <form action="#" th:action="@{/todo/update/} + *{id}" method="get">
                 <input class="btn btn-primary" th:value="Update" type="submit"/>
             </form>
         </td>

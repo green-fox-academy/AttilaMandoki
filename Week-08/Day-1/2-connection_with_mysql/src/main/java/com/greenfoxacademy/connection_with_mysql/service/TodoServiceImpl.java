@@ -42,5 +42,4 @@ public class TodoServiceImpl implements TodoService {
   public List<Todo> taskSearch(String title) {
     return todoRepository.findAllByTitleContains(title);
   }
-
 }

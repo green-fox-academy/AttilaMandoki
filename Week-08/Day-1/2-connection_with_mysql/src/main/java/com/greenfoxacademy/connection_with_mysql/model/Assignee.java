@@ -10,11 +10,7 @@ import java.util.List;
 
 
 @Entity
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-//@Table(name = "assignee")
+@Table(name = "assignee")
 public class Assignee {
 
   @Id
@@ -25,4 +21,45 @@ public class Assignee {
 
   @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, fetch = FetchType.EAGER, mappedBy = "assignee")
   private List<Todo> todos;
+
+  public Assignee() {
+  }
+
+  public Assignee(String name, String email, List<Todo> todos) {
+    this.name = name;
+    this.email = email;
+    this.todos = todos;
+  }
+
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  public List<Todo> getTodos() {
+    return todos;
+  }
+
+  public void setTodos(List<Todo> todos) {
+    this.todos = todos;
+  }
 }

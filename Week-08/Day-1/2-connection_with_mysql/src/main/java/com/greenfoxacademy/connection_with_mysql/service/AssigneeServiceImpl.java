@@ -28,8 +28,8 @@ public class AssigneeServiceImpl implements AssigneeService {
   }
 
   @Override
-  public void deleteAssignee(int assignee_id) {
-    assigneeRepository.delete(assignee_id);
+  public void deleteAssignee(int id) {
+    assigneeRepository.delete(id);
   }
 
   @Override
