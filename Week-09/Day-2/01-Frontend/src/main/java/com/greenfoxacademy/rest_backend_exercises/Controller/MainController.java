@@ -6,6 +6,7 @@ import com.greenfoxacademy.rest_backend_exercises.Model.Doubling;
 import com.greenfoxacademy.rest_backend_exercises.Model.Message.ErrorMessage;
 import com.greenfoxacademy.rest_backend_exercises.Model.Greeter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -45,5 +46,8 @@ public class MainController {
   }
 
   @PostMapping(value = "/dountil/{what}")
-  public DoUntilSum doUntil()
+  public DoUntilSum doUntil(@RequestBody(required = false)DoUntilSum inputUntil,
+                            @PathVariable(name = "what", required = false)String what) {
+
+  }
 }

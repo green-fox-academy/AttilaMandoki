@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -39,6 +40,13 @@ public class CarWebController {
     List<Car> diplomats;
     diplomats = carRepository.findAllByPlateStartingWithIgnoreCase("DT");
     model.addAttribute("carList", diplomats);
+    return "licence-plate";
+  }
+
+  @GetMapping("/search")
+  public String search(@RequestParam(value = "search", required = false) String search, Model model) {
+    List<Car> findIfContains = carService.findIfContains(search);
+    model.addAttribute("carList", findIfContains);
     return "licence-plate";
   }
 }
