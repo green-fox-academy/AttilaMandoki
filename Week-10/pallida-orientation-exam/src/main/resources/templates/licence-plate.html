@@ -31,7 +31,7 @@ background-repeat: no-repeat; background-size:105%">
     </tr>
     <tr align="center" th:each="car : ${carList}" th:object="${carList}">
          <td th:text="${car.plate}"/>
-         <td th:text="${car.brand}"/>
+         <td><a  th:text="${car.brand}" th:href="@{/search/} + ${car.brand}">Brand</a></td>
          <td th:text="${car.model}"/>
          <td th:text="${car.color}"/>
          <td th:text="${car.year}"/>

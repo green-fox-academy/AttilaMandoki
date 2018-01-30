@@ -1,12 +1,16 @@
 package com.greenfoxacademy.pallidaorientationexam.Controllers;
 
 import com.greenfoxacademy.pallidaorientationexam.Models.Car;
+import com.greenfoxacademy.pallidaorientationexam.Models.CarList;
+import com.greenfoxacademy.pallidaorientationexam.Models.ResponseMessage;
 import com.greenfoxacademy.pallidaorientationexam.Repositories.CarRepository;
 import com.greenfoxacademy.pallidaorientationexam.Services.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
@@ -48,5 +52,12 @@ public class CarWebController {
     List<Car> findIfContains = carService.findIfContains(search);
     model.addAttribute("carList", findIfContains);
     return "licence-plate";
+  }
+
+  @GetMapping(value = "/search/{brand}")
+  public String brandGroups(@PathVariable String brand, Model model) {
+  List<Car> carList = carService.findByBrand(brand);
+  model.addAttribute("carList", carList);
+  return "licence-plate";
   }
 }
