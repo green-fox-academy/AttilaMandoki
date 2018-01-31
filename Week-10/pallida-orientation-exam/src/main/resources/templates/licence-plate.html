@@ -16,6 +16,7 @@ background-repeat: no-repeat; background-size:105%">
         <input type="submit" class="btn btn-light" value="Search"/>
     </div>
     <div>
+        <a href="#" class="badge badge-warning" th:href="@{/}">Main page</a>
         <a href="#" class="badge badge-warning" th:href="@{/police}">Police cars only</a>
         <a href="#" class="badge badge-warning" th:href="@{/diplomats}">Diplomats only</a>
     </div>
@@ -35,21 +36,6 @@ background-repeat: no-repeat; background-size:105%">
          <td th:text="${car.model}"/>
          <td th:text="${car.color}"/>
          <td th:text="${car.year}"/>
-
-        <!--
-        table-primary
-        <td>
-             <form action="#" th:action="@{/todo/delete/} + *{id}" method="post">
-                 <input class="btn btn-warning" th:value="Delete" type="submit"/>
-             </form>
-         </td>
-         <td>
-             <form action="#" th:action="@{/todo/update/} + *{id}" method="get">
-                 <input class="btn btn-primary" th:value="Update" type="submit"/>
-             </form>
-         </td>
-         <td th:text="${todos.assignee}"/>
-         <td th:text="${todos.email}"/>-->
     </tr>
 </table>
 </body>

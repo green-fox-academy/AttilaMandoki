@@ -32,19 +32,19 @@ public class CarWebController {
   }
 
   @GetMapping(value = "/police")
-  public String onlyPolice(Model model) {
-    List<Car> police;
-    police = carRepository.findAllByPlateStartingWithIgnoreCase("RB");
-    model.addAttribute("carList", police);
-    return "licence-plate";
-  }
+    public String onlyPolice(Model model) {
+      List<Car> police;
+      police = carRepository.findAllByPlateStartingWithIgnoreCase("RB");
+      model.addAttribute("carList", police);
+      return "licence-plate";
+    }
 
-  @GetMapping(value = "/diplomats")
-  public String onlyDiplomats(Model model) {
-    List<Car> diplomats;
-    diplomats = carRepository.findAllByPlateStartingWithIgnoreCase("DT");
-    model.addAttribute("carList", diplomats);
-    return "licence-plate";
+    @GetMapping(value = "/diplomats")
+    public String onlyDiplomats(Model model) {
+      List<Car> diplomats;
+      diplomats = carRepository.findAllByPlateStartingWithIgnoreCase("DT");
+      model.addAttribute("carList", diplomats);
+      return "licence-plate";
   }
 
   @GetMapping("/search")
