@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:color="http://www.w3.org/1999/xhtml">
+<head>
+  <link rel="stylesheet" th:href="@{/style.css}"/>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+        integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"/>
+  <title>Licence plate search</title>
+</head>
+<body style="margin:1% 1%; position: relative; background-repeat: no-repeat; background-itemSize:105%">
+<h1>Green Fox Fashion Web Store</h1>
+<form th:action="@{/webshop/summary}" th:object="${cart}" method="post">
+  <select th:field="${cart.itemName}">
+    <option value="">Select item name</option>
+    <option class="form-control"
+            th:each="item : ${distinctItem}"
+            th:value="${item.item}"
+            th:text="${item.item}"/>
+  </select>
+  <select th:field="${cart.itemSize}">
+    <option value="">Select itemSize</option>
+    <option class="form-control" style="width:20%"
+            th:each="item : ${distinctSize}"
+            th:value="${item.size}"
+            th:text="${item.size}"/>
+  </select>
+  <input style="width:20%;" class="form-control" type="text" name="quantity" th:field="*{quantity}"/>
+  <input type="submit" class="btn" value="GET TOTAL"/>
+</form>
+<table style="width:50%; border: 4px solid; font-itemSize:large" class="table-striped table-sm border border-warning">
+  <tr align="center">
+    <th>Item name</th>
+    <th>Manufacturer</th>
+    <th>Category</th>
+    <th>Size</th>
+    <th>Price</th>
+  </tr>
+  <tr align="center" th:each="item : ${items}">
+    <td th:text="${item.getItem()}"/>
+    <td th:text="${item.getManufacturer()}"/>
+    <td th:text="${item.getCategory()}"/>
+    <td th:text="${item.getSize()}"/>
+    <td th:text="${item.getPrice()}"/>
+  </tr>
+</table>
+</body>
+</html>

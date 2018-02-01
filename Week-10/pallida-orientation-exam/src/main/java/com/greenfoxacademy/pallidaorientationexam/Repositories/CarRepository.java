@@ -10,6 +10,8 @@ import java.util.List;
 public interface CarRepository extends CrudRepository<Car, Long> {
 
   List<Car> findAllByBrand(String search);
+
   List<Car> findAllByPlateStartingWithIgnoreCase(String search);
+
   List<Car> findAllByPlateContainingIgnoreCase(String search);
 }
