@@ -33,8 +33,13 @@ public class ItemWebController {
   }
 
   @PostMapping(value = "/webshop/summary")
-  public String placeInCart( Model model) {
-    
+  public String placeInCart(@ModelAttribute Cart cart, Model model) {
+    Item item = itemService.findByItemAndSize(cart.getItemName(), cart.getItemSize());
+    double totalPrice = cart.getQuantity() * item.getPrice();
+    model.addAttribute("totalPrice", totalPrice);
+    model.addAttribute("quantity", cart.getQuantity());
+    model.addAttribute("price", item.getPrice());
+    model.addAttribute("clothes", item.getItem());
     return "summary";
   }
 }
