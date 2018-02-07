@@ -20,5 +20,4 @@ public class GreetingController {
   public String greetingSubmit(@ModelAttribute Greeting greeting) {
     return "result";
   }
-
 }
