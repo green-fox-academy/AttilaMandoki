@@ -4,14 +4,15 @@ import com.greenfoxacademy.practice_cognitive_apprenticeship.Services.CatService
 import com.greenfoxacademy.practice_cognitive_apprenticeship.Services.OwnerService;
 import com.greenfoxacademy.practice_cognitive_apprenticeship.models.Cat;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
-public class PetShopRestController {
+@Controller
+public class PetShopWebController {
 
   @Autowired
   CatService catService;
@@ -19,8 +20,9 @@ public class PetShopRestController {
   @Autowired
   OwnerService ownerService;
 
-  @RequestMapping(value = "/petshops", method = RequestMethod.GET)
-  public List<Cat> soldCats() {
-    return catService.findAll();
+  @RequestMapping(value = "/petshop", method = RequestMethod.GET)
+  public String soldCatsList(Model model) {
+    model.addAttribute("cats", catService.findAll());
+    return "petshop";
   }
 }
