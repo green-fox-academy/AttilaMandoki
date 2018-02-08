@@ -33,10 +33,10 @@ public class PetShopWebController {
 
   @RequestMapping(value = "/catfosters", method = RequestMethod.POST)
   public String newCatAdoption(@ModelAttribute Cat kitten, Model model) {
+    List<Owner> owners = new ArrayList<>(ownerService.findAll());
     model.addAttribute("name", kitten.getName());
     model.addAttribute("breed", kitten.getBreed());
-    model.addAttribute("owner", kitten.getOwner());
-    List<Owner> owners = new ArrayList<>();
+    model.addAttribute("owners", owners);
     catService.saveNewCat(kitten);
     return "catfosters";
   }

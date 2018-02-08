@@ -14,11 +14,9 @@
 <form action="#" th:action="@{/catfosters}" th:object="${kitten}" method="post">
   <p>Name: <input type="text" th:field="*{name}"/></p>
   <p>Breed: <input type="text" th:field="*{breed}"/></p>
-  <select th:field="*{owner}">
-    <option value="default">Select a registered foster owner</option>
-    <option th:each="${owners}" th:value="${owner_name}"th:text="${owner}"></option>
+  <select th:each="owner:${owners}" th:field="*{owner}">
+    <option th:value="*{ownerName}"th:text="${owner.ownerName}"></option>
   </select>
-  <p>Owner: <input type="text" th:field="*{owner}"/></p>
   <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
 </form>
 <h2>Adopted cats:</h2>

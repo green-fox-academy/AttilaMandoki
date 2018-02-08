@@ -24,8 +24,13 @@ public class OwnerServiceImpl implements OwnerService {
   }
 
   @Override
-  public Owner findByName(String name) {
-    return ownerRepository.findByOwnerName(name);
+  public Owner findByOwnerName(Owner owner) {
+    return ownerRepository.findByOwnerName(owner.getOwnerName());
+  }
+
+  @Override
+  public List<Owner> findAllByOwnerName(Owner owner) {
+    return (List<Owner>) ownerRepository.findAllByOwnerName(owner.getOwnerName());
   }
 
   @Override
