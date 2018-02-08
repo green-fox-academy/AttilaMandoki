@@ -14,4 +14,8 @@ public interface CatService {
   Cat findOneById(long id);
 
   List<Cat> findAllByBreed(String breed);
+
+  void saveNewCat(Cat cat);
+
+
 }

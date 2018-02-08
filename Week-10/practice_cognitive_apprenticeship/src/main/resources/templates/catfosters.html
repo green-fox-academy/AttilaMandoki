@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:color="http://www.w3.org/1999/xhtml">
+<head>
+  <link rel="stylesheet" th:href="@{/style.css}"/>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+        integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"/>
+  <title>Foster a cat</title>
+</head>
+<body>
+<h1>Adopted cats database</h1>
+<a href="/newfoster">Submit new foster owner</a>
+<h2>Submit new adoption:</h2>
+<form action="#" th:action="@{/catfosters}" th:object="${kitten}" method="post">
+  <p>Name: <input type="text" th:field="*{name}"/></p>
+  <p>Breed: <input type="text" th:field="*{breed}"/></p>
+  <select th:field="*{owner}">
+    <option value="default">Select a registered foster owner</option>
+    <option th:each="${owners}" th:value="${owner_name}"th:text="${owner}"></option>
+  </select>
+  <p>Owner: <input type="text" th:field="*{owner}"/></p>
+  <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+</form>
+<h2>Adopted cats:</h2>
+<table style="width:50%; border: 4px solid; font-size:large"
+       class="table-primary table-striped table-sm border border-warning">
+  <tr align="center">
+    <th>Cat name: </th>
+    <th>Cat breed: </th>
+    <th>Cat owner: </th>
+  </tr>
+  <tr align="center" th:each="cat : ${cats}">
+    <th th:text="${cat.name}"></th>
+    <th th:text="${cat.breed}"></th>
+    <th th:text="${cat.owner.ownerName}"></th>
+  </tr>
+</table>
+</body>
+</html>

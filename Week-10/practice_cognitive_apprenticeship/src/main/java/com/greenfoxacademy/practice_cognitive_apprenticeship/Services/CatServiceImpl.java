@@ -27,4 +27,12 @@ public class CatServiceImpl implements CatService {
   public List<Cat> findAllByBreed(String breed) {
     return (List<Cat>) catRepository.findAllByBreed(breed);
   }
+
+  @Override
+  public void saveNewCat(Cat cat) {
+    catRepository.save(cat);
+  }
+
+
+
 }

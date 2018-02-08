@@ -1,7 +1,5 @@
 package com.greenfoxacademy.practice_cognitive_apprenticeship.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 
 @Entity

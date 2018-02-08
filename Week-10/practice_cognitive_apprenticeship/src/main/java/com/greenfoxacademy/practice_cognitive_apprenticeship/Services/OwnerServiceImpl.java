@@ -19,7 +19,19 @@ public class OwnerServiceImpl implements OwnerService {
   }
 
   @Override
-  public Owner findOneById(long id) {
+  public Owner findById(long id) {
     return ownerRepository.findOne(id);
+  }
+
+  @Override
+  public Owner findByName(String name) {
+    return ownerRepository.findByOwnerName(name);
+  }
+
+  @Override
+  public void saveNewOwner(Owner owner) {
+    if (ownerRepository.findByOwnerName(owner.getOwnerName()) == null) {
+      ownerRepository.save(owner);
+    }
   }
 }
