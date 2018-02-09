@@ -9,13 +9,12 @@ public class Cat {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
-
   private String name;
-
   private String breed;
 
   //@JsonIgnore
   @OneToOne(cascade = CascadeType.ALL)
+  @JoinColumn(name = "owner_id")
   private Owner owner;
 
   public Cat() {

@@ -8,8 +8,8 @@
   <title>New adopting owner</title>
 </head>
 <body>
-<form action="#" th:action="@{/newfoster}" th:object="${owner}" method="post">
-  <p>Please enter new foster owner's name: <input type="text" th:field="*{owner_name}"/></p>
+<form action="#" th:action="@{/newfoster}" th:object="${ownerDTO}" method="post">
+  <p>Please enter new foster owner's name: <input type="text" th:field="*{name}"/></p>
 </form>
 </body>
 </html>

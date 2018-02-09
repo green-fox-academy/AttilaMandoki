@@ -24,19 +24,16 @@ public class OwnerServiceImpl implements OwnerService {
   }
 
   @Override
-  public Owner findByOwnerName(Owner owner) {
-    return ownerRepository.findByOwnerName(owner.getOwnerName());
+  public Owner findByOwnerName(String ownerName) {
+    return ownerRepository.findByOwnerName(ownerName);
   }
 
   @Override
-  public List<Owner> findAllByOwnerName(Owner owner) {
-    return (List<Owner>) ownerRepository.findAllByOwnerName(owner.getOwnerName());
-  }
-
-  @Override
-  public void saveNewOwner(Owner owner) {
-    if (ownerRepository.findByOwnerName(owner.getOwnerName()) == null) {
-      ownerRepository.save(owner);
+  public void saveNewOwner(String name) {
+    if (ownerRepository.findByOwnerName(name) == null) {
+      Owner newOwner = new Owner();
+      newOwner.setOwnerName(name);
+      ownerRepository.save(newOwner);
     }
   }
 }

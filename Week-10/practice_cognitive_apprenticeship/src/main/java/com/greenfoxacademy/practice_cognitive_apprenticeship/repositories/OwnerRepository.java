@@ -9,9 +9,9 @@ import java.util.List;
 @Repository
 public interface OwnerRepository extends CrudRepository<Owner, Long> {
 
-  Owner findById(Long Id);
+  Owner findById(Long id);
 
-  List<Owner> findAllByOwnerName(String Name);
+  List<Owner> findAllByOwnerName(String name);
 
-  Owner findByOwnerName(String Name);
+  Owner findByOwnerName(String name);
 }

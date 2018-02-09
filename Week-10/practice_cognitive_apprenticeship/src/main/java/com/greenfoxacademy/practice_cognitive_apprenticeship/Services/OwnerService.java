@@ -11,11 +11,9 @@ public interface OwnerService {
 
   List<Owner> findAll();
 
-  List<Owner> findAllByOwnerName(Owner owner);
-
   Owner findById(long id);
 
-  Owner findByOwnerName(Owner owner);
+  Owner findByOwnerName(String ownerName);
 
-  void saveNewOwner(Owner owner);
+  void saveNewOwner(String name);
 }
