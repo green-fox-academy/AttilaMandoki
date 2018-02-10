@@ -12,7 +12,6 @@ public class Cat {
   private String name;
   private String breed;
 
-  //@JsonIgnore
   @OneToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "owner_id")
   private Owner owner;

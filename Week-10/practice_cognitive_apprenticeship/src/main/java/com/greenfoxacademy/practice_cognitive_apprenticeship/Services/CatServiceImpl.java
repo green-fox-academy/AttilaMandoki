@@ -24,8 +24,8 @@ public class CatServiceImpl implements CatService {
   }
 
   @Override
-  public List<Cat> findAllByBreed(String breed) {
-    return (List<Cat>) catRepository.findAllByBreed(breed);
+  public List<Cat> findByNameContaining(String search) {
+    return (List<Cat>) catRepository.findByNameContaining(search);
   }
 
   @Override

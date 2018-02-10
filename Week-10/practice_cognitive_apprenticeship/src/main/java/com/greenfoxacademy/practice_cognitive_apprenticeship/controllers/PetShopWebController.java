@@ -7,14 +7,9 @@ import com.greenfoxacademy.practice_cognitive_apprenticeship.models.CatDTO;
 import com.greenfoxacademy.practice_cognitive_apprenticeship.models.Owner;
 import com.greenfoxacademy.practice_cognitive_apprenticeship.models.OwnerDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +23,7 @@ public class PetShopWebController {
   @Autowired
   OwnerService ownerService;
 
-  @RequestMapping(value = "/catfosters", method = RequestMethod.GET)
+  @GetMapping(value = "/")
   public String adoptedCatsList(Model model) {
     List<Owner> owners = new ArrayList<>(ownerService.findAll());
     model.addAttribute("cats", catService.findAll());
@@ -37,7 +32,7 @@ public class PetShopWebController {
     return "catfosters";
   }
 
-  @RequestMapping(value = "/catfosters", method = RequestMethod.POST)
+  @RequestMapping(value = "/", method = RequestMethod.POST)
   public String newCatAdoption(@ModelAttribute CatDTO catDTO) {
     Cat cat = new Cat();
     cat.setName(catDTO.getName());
@@ -45,10 +40,10 @@ public class PetShopWebController {
     Owner currentOwner = ownerService.findByOwnerName(catDTO.getOwner());
     cat.setOwner(currentOwner);
     catService.saveNewCat(cat);
-    return "redirect:/catfosters";
+    return "redirect:/";
   }
 
-  @RequestMapping(value = "/newfoster", method = RequestMethod.GET)
+  @RequestMapping(value = "newfoster", method = RequestMethod.GET)
   public String submitPageForNewOwner(Model model) {
     model.addAttribute("ownerDTO", new OwnerDTO());
     return "newfoster";
@@ -57,6 +52,13 @@ public class PetShopWebController {
   @PostMapping(value = "newfoster")
   public String saveNewOwner(@ModelAttribute OwnerDTO ownerDTO) {
     ownerService.saveNewOwner(ownerDTO.getName());
-    return "redirect:/catfosters";
+    return "redirect:/";
+  }
+
+  @GetMapping(value = "/search")
+  public String search(@RequestParam(value = "search", required = false) String search, Model model) {
+    List<Cat> findAllByCatNameContains = catService.findByNameContaining(search);
+    model.addAttribute("cat", findAllByCatNameContains);
+    return "redirect:/";
   }
 }

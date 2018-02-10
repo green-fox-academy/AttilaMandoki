@@ -15,23 +15,31 @@
   <p>Breed: <input type="text" th:field="*{breed}"/></p>
   <select th:field="*{owner}">
     <option th:each="actualOwner:${owners}"
-            th:value="${actualOwner.ownerName}" th:text="${actualOwner.ownerName}" ></option>
+            th:value="${actualOwner.ownerName}" th:text="${actualOwner.ownerName}"></option>
   </select>
   <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
 </form>
-<a href="/newfoster">Submit new foster owner</a>
+<div>
+  <a href="/newfoster">Submit new foster owner</a>
+</div>
+<form th:action="@{search}" method="get">
+  <div class="input-group mb-2">
+    <input type="text" style="width:45%;" name="search" placeholder="Search cats by name..."/>
+    <input type="submit" class="btn btn-light" value="Submit"/>
+  </div>
+</form>
 <h2>Adopted cats:</h2>
 <table style="width:50%; border: 4px solid; font-size:large"
        class="table-primary table-striped table-sm border border-warning">
   <tr align="center">
-    <th>Cat name: </th>
-    <th>Cat breed: </th>
-    <th>Cat owner: </th>
+    <th>Cat name:</th>
+    <th>Cat breed:</th>
+    <th>Cat owner:</th>
   </tr>
-  <tr align="center" th:each="cat : ${cats}">
-    <th th:text="${cat.name}"></th>
-    <th th:text="${cat.breed}"></th>
-    <th th:text="${cat.owner.ownerName}"></th>
+  <tr align="center" th:each="cat : ${cats}" th:object="${cat}">
+    <th th:text="*{name}"></th>
+    <th th:text="*{breed}"></th>
+    <th th:text="*{owner.ownerName}"></th>
   </tr>
 </table>
 </body>

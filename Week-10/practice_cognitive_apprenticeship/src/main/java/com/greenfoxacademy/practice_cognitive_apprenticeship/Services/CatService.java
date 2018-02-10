@@ -13,7 +13,7 @@ public interface CatService {
 
   Cat findOneById(long id);
 
-  List<Cat> findAllByBreed(String breed);
+  List<Cat> findByNameContaining(String search);
 
   void saveNewCat(Cat cat);
 
