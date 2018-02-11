@@ -58,7 +58,10 @@ public class PetShopWebController {
   @GetMapping(value = "/search")
   public String search(@RequestParam(value = "search", required = false) String search, Model model) {
     List<Cat> findAllByCatNameContains = catService.findByNameContaining(search);
-    model.addAttribute("cat", findAllByCatNameContains);
-    return "redirect:/";
+    List<Owner> owners = new ArrayList<>(ownerService.findAll());
+    model.addAttribute("cats", findAllByCatNameContains);
+    model.addAttribute("catDTO", new CatDTO());
+    model.addAttribute("owners", owners);
+    return "catfosters";
   }
 }
