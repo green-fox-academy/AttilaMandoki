@@ -33,6 +33,8 @@ public class CatServiceImpl implements CatService {
     catRepository.save(cat);
   }
 
-
-
+  @Override
+  public List<Cat> catsByBreed(String search) {
+    return (List<Cat>) catRepository.findAllByBreedContaining(search);
+  }
 }

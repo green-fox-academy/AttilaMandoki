@@ -4,9 +4,7 @@ import com.greenfoxacademy.practice_cognitive_apprenticeship.Services.CatService
 import com.greenfoxacademy.practice_cognitive_apprenticeship.Services.OwnerService;
 import com.greenfoxacademy.practice_cognitive_apprenticeship.models.Cat;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,10 +17,21 @@ public class PetShopRestController {
   @Autowired
   OwnerService ownerService;
 
-  @RequestMapping(value = "/petshops", method = RequestMethod.GET)
+  @RequestMapping(value = "/api/petshops", method = RequestMethod.GET)
   public List<Cat> soldCats() {
     return catService.findAll();
   }
+
+  @GetMapping("/api/search/{breed}")
+  public Object getCatsBySameBreed(@PathVariable String breed) {
+    if (breed == null) {
+      return "No brand name provided.";
+    } else {
+      List<Cat> catsByBreed = catService.catsByBreed(breed);
+      return catsByBreed;
+    }
+  }
+  //@PostMapping("/api/newfoster/{name}")
 }
 
 

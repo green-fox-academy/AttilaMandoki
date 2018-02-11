@@ -12,4 +12,6 @@ public interface CatRepository extends CrudRepository<Cat, Long> {
 
   List<Cat> findByNameContaining(String search);
 
+  List<Cat> findAllByBreedContaining(String search);
+
 }
