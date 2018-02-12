@@ -7,6 +7,8 @@ import com.greenfoxacademy.practice_cognitive_apprenticeship.models.Owner;
 import com.greenfoxacademy.practice_cognitive_apprenticeship.repositories.CatRepository;
 import com.greenfoxacademy.practice_cognitive_apprenticeship.repositories.OwnerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -54,7 +56,12 @@ public class PetShopRestController {
     cat1.setName(catname);
     cat1.setBreed(catbreed);
     catRepository.save(cat1);
-    //TODO: This is not working like this, needs to be fixed. 
+    //TODO: This is not working like this, needs to be fixed.
+  }
+
+  @PostMapping("/api/newjsoncat")
+  public ResponseEntity<Cat> newCatFromJsonFormat(@RequestBody Cat cat) {
+    return new ResponseEntity<Cat>(cat, HttpStatus.OK);
   }
 }
 
