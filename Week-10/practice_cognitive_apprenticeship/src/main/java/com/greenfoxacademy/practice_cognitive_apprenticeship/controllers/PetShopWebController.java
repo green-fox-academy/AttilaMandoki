@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,7 @@ public class PetShopWebController {
   @Autowired
   OwnerService ownerService;
 
-  @GetMapping(value = "/")
+  @GetMapping({"/", "/list"})
   public String adoptedCatsList(Model model) {
     List<Owner> owners = new ArrayList<>(ownerService.findAll());
     model.addAttribute("cats", catService.findAll());
@@ -63,5 +64,11 @@ public class PetShopWebController {
     model.addAttribute("catDTO", new CatDTO());
     model.addAttribute("owners", owners);
     return "catfosters";
+  }
+
+  @PostMapping("/delete/{id}")
+  public ModelAndView delete(@PathVariable Long id) {
+    catService.deleteCat(id);
+    return new ModelAndView("redirect:/catfosters/list");
   }
 }

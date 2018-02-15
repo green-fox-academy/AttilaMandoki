@@ -37,4 +37,9 @@ public class CatServiceImpl implements CatService {
   public List<Cat> catsByBreed(String search) {
     return (List<Cat>) catRepository.findAllByBreedContaining(search);
   }
+
+  @Override
+  public void deleteCat(Long id) {
+    catRepository.delete(id);
+  }
 }

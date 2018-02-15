@@ -18,4 +18,6 @@ public interface CatService {
   void saveNewCat(Cat cat);
 
   List<Cat> catsByBreed(String search);
+
+  void deleteCat(Long id);
 }
