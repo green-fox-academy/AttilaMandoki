@@ -56,7 +56,7 @@ public class PetShopRestController {
     cat1.setName(catname);
     cat1.setBreed(catbreed);
     catRepository.save(cat1);
-    //TODO: This is not working like this, needs to be fixed.
+    //TODO: It's is not working like this, needs to be fixed.
   }
 
   @PostMapping("/api/newjsoncat")
