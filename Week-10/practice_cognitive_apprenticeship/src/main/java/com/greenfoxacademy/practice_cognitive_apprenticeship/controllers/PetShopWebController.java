@@ -26,7 +26,7 @@ public class PetShopWebController {
 
   @GetMapping({"/", "/list"})
   public String adoptedCatsList(Model model) {
-    List<Owner> owners = new ArrayList<>(ownerService.findAll());
+    List<Owner> owners = ownerService.findAll();
     model.addAttribute("cats", catService.findAll());
     model.addAttribute("catDTO", new CatDTO());
     model.addAttribute("owners", owners);
