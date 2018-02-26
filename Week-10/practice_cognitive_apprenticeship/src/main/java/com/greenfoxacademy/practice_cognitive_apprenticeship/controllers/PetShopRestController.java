@@ -61,7 +61,7 @@ public class PetShopRestController {
 
   @PostMapping("/api/newjsoncat")
   public ResponseEntity<Cat> newCatFromJsonFormat(@RequestBody Cat cat) {
-    return new ResponseEntity<Cat>(cat, HttpStatus.OK);
+    return new ResponseEntity<>(cat, HttpStatus.OK);
   }
 }
 

@@ -71,4 +71,18 @@ public class PetShopWebController {
     catService.deleteCat(id);
     return new ModelAndView("redirect:/catfosters/list");
   }
+
+  @GetMapping("/update/{id}")
+  public String displayEditingPage(@PathVariable Long id, Model model) {
+    Cat cat = catService.findOneById(id);
+    model.addAttribute("cats", cat);
+    return "/update";
+  }
+
+  @PostMapping("/update/{id}")
+  public String submitCatModifications(@PathVariable Long id, @ModelAttribute Cat cat) {
+    cat.setId(id);
+    catService.modifyCat(cat);
+    return "redirect:/catfosters";
+  }
 }

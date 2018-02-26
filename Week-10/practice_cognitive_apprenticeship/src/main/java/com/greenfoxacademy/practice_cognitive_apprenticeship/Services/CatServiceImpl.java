@@ -25,7 +25,7 @@ public class CatServiceImpl implements CatService {
 
   @Override
   public List<Cat> findByNameContaining(String search) {
-    return (List<Cat>) catRepository.findByNameContaining(search);
+    return catRepository.findByNameContaining(search);
   }
 
   @Override
@@ -35,11 +35,16 @@ public class CatServiceImpl implements CatService {
 
   @Override
   public List<Cat> catsByBreed(String search) {
-    return (List<Cat>) catRepository.findAllByBreedContaining(search);
+    return catRepository.findAllByBreedContaining(search);
   }
 
   @Override
   public void deleteCat(Long id) {
     catRepository.delete(id);
+  }
+
+  @Override
+  public void modifyCat(Cat cat) {
+    catRepository.save(cat);
   }
 }

@@ -20,4 +20,6 @@ public interface CatService {
   List<Cat> catsByBreed(String search);
 
   void deleteCat(Long id);
+
+  void modifyCat(Cat cat);
 }
