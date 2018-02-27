@@ -20,7 +20,7 @@ public class Partner extends User {
     this.companyName = companyName;
   }
 
-  public Partner(String email,  String companyName) {
+  public Partner(String email, String companyName) {
     super(email);
     this.companyName = companyName;
   }

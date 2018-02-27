@@ -8,7 +8,7 @@ public class Preference {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  private long id;
+  private int id;
   private int ranking;
   @ManyToOne
   @JoinColumn(name = "user_id")
@@ -18,11 +18,11 @@ public class Preference {
   public Preference() {
   }
 
-  public long getId() {
+  public int getId() {
     return id;
   }
 
-  public void setId(long id) {
+  public void setId(int id) {
     this.id = id;
   }
 

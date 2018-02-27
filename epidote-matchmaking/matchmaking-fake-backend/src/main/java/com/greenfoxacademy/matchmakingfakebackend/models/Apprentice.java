@@ -16,7 +16,7 @@ public class Apprentice extends User {
   private String cohort;
   @Column(name = "cohort_class", nullable = false)
   private String cohortClass;
-  @Column(name = "is_Hungarian_Speaker")
+  @Column(name = "is_hungarian_speaker")
   private boolean isHungarianSpeaker;
 
   public Apprentice() {

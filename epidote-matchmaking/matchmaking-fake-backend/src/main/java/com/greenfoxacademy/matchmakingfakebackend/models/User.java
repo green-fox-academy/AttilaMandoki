@@ -2,37 +2,45 @@ package com.greenfoxacademy.matchmakingfakebackend.models;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.UUID;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class User {
 
   @Id
-  protected String id;
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  protected int id;
   @Column(nullable = false)
   protected String email;
+  @Column(name = "phone_number")
   protected String phoneNumber;
+  @Column(name = "is_active_user")
   protected boolean isActiveUser;
   @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
   protected List<Preference> preferences;
 
   public User() {
-    this.id = UUID.randomUUID().toString();
   }
 
   public User(String email) {
-    this.id = UUID.randomUUID().toString();
     this.email = email;
   }
 
+
   public User(String email, String phoneNumber) {
-    this.id = UUID.randomUUID().toString();
     this.email = email;
     this.phoneNumber = phoneNumber;
   }
 
-  public String getId() {
+  public User(int id, String email, String phoneNumber, boolean isActiveUser, List<Preference> preferences) {
+    this.id = id;
+    this.email = email;
+    this.phoneNumber = phoneNumber;
+    this.isActiveUser = isActiveUser;
+    this.preferences = preferences;
+  }
+
+  public int getId() {
     return this.id;
   }
 
