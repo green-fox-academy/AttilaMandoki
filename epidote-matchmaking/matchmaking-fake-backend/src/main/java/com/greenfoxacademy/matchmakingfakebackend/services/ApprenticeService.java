@@ -21,6 +21,10 @@ public class ApprenticeService {
     return apprenticeRepo.findOne(id);
   }
 
+  public Apprentice getOneByEmail(String email) {
+    return apprenticeRepo.findByEmail(email);
+  }
+
   public List<Apprentice> getAllByCohort(String cohort) {
     return apprenticeRepo.findAllByCohort(cohort);
   }

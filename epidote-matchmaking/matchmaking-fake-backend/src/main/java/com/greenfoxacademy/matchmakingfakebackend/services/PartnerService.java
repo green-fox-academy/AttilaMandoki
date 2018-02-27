@@ -21,6 +21,10 @@ public class PartnerService {
     return partnerRepo.findOne(id);
   }
 
+  public Partner getOneByEmail(String email) {
+    return partnerRepo.findByEmail(email);
+  }
+
   public Partner getOneByCompanyName(String companyName) {
     return partnerRepo.findByCompanyName(companyName);
   }

@@ -1,6 +1,7 @@
 package com.greenfoxacademy.matchmakingfakebackend.controllers;
 
 import com.greenfoxacademy.matchmakingfakebackend.models.Apprentice;
+import com.greenfoxacademy.matchmakingfakebackend.models.Partner;
 import com.greenfoxacademy.matchmakingfakebackend.services.ApprenticeService;
 import com.greenfoxacademy.matchmakingfakebackend.services.PartnerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,11 @@ public class AppRestController {
     return apprenticeService.getAllByClassCohort(cohortClass);
   }
 
+  @RequestMapping(value = "api/apprentice/{email}", method = RequestMethod.GET)
+  public Apprentice apprenticeByEmail(@PathVariable String email) {
+    return apprenticeService.getOneByEmail(email);
+  }
+
   @RequestMapping(value = "/api/apprentice/{id}", method = RequestMethod.GET)
   public Apprentice apprenticeById(@PathVariable Integer id) {
     return apprenticeService.getOneById(id);
@@ -43,5 +49,25 @@ public class AppRestController {
   @RequestMapping(value = "/api/apprentice/{firstName}/{lastName}", method = RequestMethod.GET)
   public Apprentice apprenticeByName(@PathVariable String firstName, String lastName) {
     return apprenticeService.getAllByName(firstName, lastName);
+}
+
+  @RequestMapping(value = "/api/partner/all", method = RequestMethod.GET)
+  public List<Partner> listOfPartners() {
+    return partnerService.getAll();
+  }
+
+  @RequestMapping(value = "/api/partner/{companyName}", method = RequestMethod.GET)
+  public Partner partnerByName(@PathVariable String companyName) {
+    return partnerService.getOneByCompanyName(companyName);
+  }
+
+  @RequestMapping(value = "api/partner/{email}", method = RequestMethod.GET)
+  public Partner partnerByEmail(@PathVariable String email) {
+    return partnerService.getOneByEmail(email);
+  }
+
+  @RequestMapping(value = "/api/partner/{id}", method = RequestMethod.GET)
+  public Partner partnerById(@PathVariable Integer id) {
+    return partnerService.getOneById(id);
   }
 }

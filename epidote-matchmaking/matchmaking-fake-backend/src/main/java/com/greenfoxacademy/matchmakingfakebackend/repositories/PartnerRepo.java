@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 public interface PartnerRepo extends CrudRepository<Partner, Integer> {
 
   Partner findByCompanyName(String companyName);
-
+  Partner findByEmail(String email);
 }
