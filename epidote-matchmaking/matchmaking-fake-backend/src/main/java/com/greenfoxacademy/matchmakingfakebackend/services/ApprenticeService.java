@@ -22,7 +22,7 @@ public class ApprenticeService {
   }
 
   public Apprentice getOneByEmail(String email) {
-    return apprenticeRepo.findByEmail(email);
+    return apprenticeRepo.findByEmailIsContaining(email);
   }
 
   public List<Apprentice> getAllByCohort(String cohort) {

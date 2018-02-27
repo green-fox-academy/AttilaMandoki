@@ -22,7 +22,7 @@ public class PartnerService {
   }
 
   public Partner getOneByEmail(String email) {
-    return partnerRepo.findByEmail(email);
+    return partnerRepo.findByEmailIsContaining(email);
   }
 
   public Partner getOneByCompanyName(String companyName) {
