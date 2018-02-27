@@ -28,4 +28,8 @@ public class ApprenticeService {
   public List<Apprentice> getAllByClassCohort(String cohortClass) {
     return apprenticeRepo.findAllByCohortClass(cohortClass);
   }
+
+  public Apprentice getAllByName(String firstName, String lastName) {
+    return apprenticeRepo.findAllByFirstNameAndLastName(firstName, lastName);
+  }
 }

@@ -1,10 +1,8 @@
 package com.greenfoxacademy.matchmakingfakebackend.models;
 
 import javax.persistence.*;
-import java.util.List;
 
-@Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@MappedSuperclass
 public abstract class User {
 
   @Id
@@ -16,32 +14,16 @@ public abstract class User {
   protected String phoneNumber;
   @Column(name = "is_active_user")
   protected boolean isActiveUser;
-  @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-  protected List<Preference> preferences;
 
   public User() {
   }
 
-  public User(String email) {
-    this.email = email;
-  }
-
-
-  public User(String email, String phoneNumber) {
-    this.email = email;
-    this.phoneNumber = phoneNumber;
-  }
-
-  public User(int id, String email, String phoneNumber, boolean isActiveUser, List<Preference> preferences) {
-    this.id = id;
-    this.email = email;
-    this.phoneNumber = phoneNumber;
-    this.isActiveUser = isActiveUser;
-    this.preferences = preferences;
-  }
-
   public int getId() {
-    return this.id;
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
   }
 
   public void setEmail(String email) {
@@ -66,13 +48,5 @@ public abstract class User {
 
   public void setActiveUser(boolean activeUser) {
     this.isActiveUser = activeUser;
-  }
-
-  public List<Preference> getPreferences() {
-    return preferences;
-  }
-
-  public void setPreferences(List<Preference> preferences) {
-    this.preferences = preferences;
   }
 }

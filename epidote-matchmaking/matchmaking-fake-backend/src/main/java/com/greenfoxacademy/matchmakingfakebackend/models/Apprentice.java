@@ -1,8 +1,6 @@
 package com.greenfoxacademy.matchmakingfakebackend.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "apprentice")
@@ -21,14 +19,6 @@ public class Apprentice extends User {
 
   public Apprentice() {
     super();
-  }
-
-  public Apprentice(String email) {
-    super(email);
-  }
-
-  public Apprentice(String email, String phoneNumber) {
-    super(email, phoneNumber);
   }
 
   public String getFirstName() {

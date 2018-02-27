@@ -38,10 +38,9 @@ public class PetShopRestController {
     if (breed == null) {
       return "No brand name provided.";
     } else {
-      List<Cat> catsByBreed = catService.catsByBreed(breed);
-      return catsByBreed;
+      return catService.catsByBreed(breed);
+      }
     }
-  }
 
   @PostMapping("/api/newfoster/{name}")
   public void newOwner(@PathVariable String name) {
