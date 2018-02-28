@@ -26,6 +26,6 @@ public class PartnerService {
   }
 
   public Partner getOneByCompanyName(String companyName) {
-    return partnerRepo.findByCompanyName(companyName);
+    return partnerRepo.findByCompanyNameContaining(companyName);
   }
 }

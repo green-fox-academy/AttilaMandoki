@@ -56,7 +56,7 @@ public class AppRestController {
     return partnerService.getAll();
   }
 
-  @RequestMapping(value = "/api/partner/name{companyName}", method = RequestMethod.GET)
+  @RequestMapping(value = "/api/partner/name/{companyName}", method = RequestMethod.GET)
   public Partner partnerByName(@PathVariable String companyName) {
     return partnerService.getOneByCompanyName(companyName);
   }
