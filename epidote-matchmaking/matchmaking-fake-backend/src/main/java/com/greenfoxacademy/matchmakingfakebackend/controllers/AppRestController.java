@@ -46,6 +46,11 @@ public class AppRestController {
     return apprenticeService.getOneById(id);
   }
 
+  @RequestMapping(value = "/api/apprentice/slackid/{slackChannelId}", method = RequestMethod.GET)
+  public Apprentice apprenticeBySlackChannelId(@PathVariable String slackChannelId) {
+    return apprenticeService.getOneBySlackId(slackChannelId);
+  }
+
   @RequestMapping(value = "/api/apprentice/name/{firstName}/{lastName}", method = RequestMethod.GET)
   public Apprentice apprenticeByName(@PathVariable String firstName,@PathVariable String lastName) {
     return apprenticeService.getAllByName(firstName, lastName);

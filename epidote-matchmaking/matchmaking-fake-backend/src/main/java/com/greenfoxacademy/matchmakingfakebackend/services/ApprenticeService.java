@@ -25,6 +25,10 @@ public class ApprenticeService {
     return apprenticeRepo.findByEmailIsContaining(email);
   }
 
+  public Apprentice getOneBySlackId(String slackChannelId) {
+    return apprenticeRepo.findBySlackChannelIdContaining(slackChannelId);
+  }
+
   public List<Apprentice> getAllByCohort(String cohort) {
     return apprenticeRepo.findAllByCohort(cohort);
   }

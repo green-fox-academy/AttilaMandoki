@@ -13,4 +13,5 @@ public interface ApprenticeRepo extends CrudRepository<Apprentice, Integer> {
   List<Apprentice> findAllByCohortClass(String cohortClass);
   Apprentice findAllByFirstNameAndLastName(String firstName, String lastName);
   Apprentice findByEmailIsContaining(String email);
+  Apprentice findBySlackChannelIdContaining(String slackChannelId);
 }
