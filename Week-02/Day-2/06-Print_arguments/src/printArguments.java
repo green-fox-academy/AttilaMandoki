@@ -15,16 +15,11 @@ public class printArguments {
 
       String currentLine = scanner.next();
       wordsArray[i] = currentLine;
-
     }
-
-    printArguments(wordsArray);
-
+    printArgumentsFunct(wordsArray);
   }
 
-  public static void printArguments(String... input) {
-
+  private static void printArgumentsFunct(String... input) {
     System.out.println(Arrays.toString(input));
-
   }
 }
