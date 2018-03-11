@@ -1,14 +1,14 @@
 public class Animal {
 
-    int hunger = 50;
-    int thirst = 50;
+    int hunger;
+    int thirst;
     String name = "Lion";
 
-  public Animal() {
+  Animal() {
     this(50, 50);
   }
 
-  public Animal(int hunger, int thirst) {
+  Animal(int hunger, int thirst) {
     this.hunger = hunger;
     this.thirst = thirst;
   }

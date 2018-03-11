@@ -10,15 +10,15 @@ public class Dominoes {
 
     System.out.println(dominoes);
 
-    pairedDominoes(dominoes);
     System.out.println(pairedDominoes(dominoes));
   }
+
   private static List<Domino> pairedDominoes(List<Domino> dominoList) {
     for (int i = 0; i < dominoList.size(); i++) {
       for (int j = i; j < dominoList.size(); j++) {
         if (dominoList.get(i).getValues()[1] == dominoList.get(j).getValues()[0]) {
-          dominoList.add(i+1, dominoList.get(j));
-          dominoList.remove(j+1);
+          dominoList.add(i + 1, dominoList.get(j));
+          dominoList.remove(j + 1);
         }
       }
     }
