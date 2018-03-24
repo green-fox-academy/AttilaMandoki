@@ -8,9 +8,9 @@ public class CandyShop{
     arrayList.add("Brownie");
     arrayList.add(false);
 
-    // Accidentally we added "2" and "false" to the list. 
-    // Your task is to change from "2" to "Croissant" and change from "false" to "Ice cream"
-    // No, don't just remove the lines
+    /*Accidentally we added "2" and "false" to the list.
+    Your task is to change from "2" to "Croissant" and change from "false" to "Ice cream"
+    No, don't just remove the lines*/
 
     for (int i = 0; i < arrayList.size(); i++) {
       arrayList.set(1, "Croissant");
@@ -18,4 +18,5 @@ public class CandyShop{
     }
     System.out.println(arrayList);
   }
+
 }
