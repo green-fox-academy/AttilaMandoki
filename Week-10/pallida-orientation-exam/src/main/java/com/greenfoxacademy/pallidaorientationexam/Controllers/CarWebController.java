@@ -23,7 +23,7 @@ public class CarWebController {
 
   @GetMapping(value = { "/", ""})
   public String displayWholeList(Model model) {
-    List<Car> listOfCars = (List<Car>) carService.findAll();
+    List<Car> listOfCars = carService.findAll();
     model.addAttribute("carList", listOfCars);
     return "licence-plate";
   }

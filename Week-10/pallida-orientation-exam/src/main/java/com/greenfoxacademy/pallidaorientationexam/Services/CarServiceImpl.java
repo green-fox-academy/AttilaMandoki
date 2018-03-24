@@ -18,11 +18,6 @@ public class CarServiceImpl implements CarService {
     return (List<Car>) carRepository.findAll();
   }
 
-//  @Override
-//  public List<Car> findByPlate(String plate) {
-//    return carRepository.findAllByPlateStartingWithIgnoreCase(plate);
-//  }
-
   @Override
   public List<Car> findByBrand(String brand) {
     return carRepository.findAllByBrand(brand);
@@ -30,6 +25,7 @@ public class CarServiceImpl implements CarService {
 
   @Override
   public List<Car> findIfContains(String search) {
-    return (List<Car>) carRepository.findAllByPlateContainingIgnoreCase(search);
+    return carRepository.findAllByPlateContainingIgnoreCase(search);
   }
+  
 }
