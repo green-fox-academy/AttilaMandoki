@@ -1,23 +1,17 @@
 import java.util.Scanner;
 
 public class OddEven {
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        Scanner numberScanner = new Scanner(System.in);
+    Scanner numberScanner = new Scanner(System.in);
 
-        int userInput = numberScanner.nextInt();
+    int userInput = numberScanner.nextInt();
 
-        if (userInput % 2 == 0) {
-            System.out.println("Even");
-
-        } else {
-            System.out.println("Odd");
-        }
-
+    if (userInput % 2 == 0) {
+      System.out.println("Even");
+    } else {
+      System.out.println("Odd");
     }
+  }
 
-    /*
-Write a program that reads a number from the standard input,
-Then prints "Odd" if the number is odd, or "Even" if it is even.
-*/
 }
