@@ -6,8 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.sql.Time;
-import java.util.ArrayList;
-import java.util.List;
 
 @Getter
 @Setter
@@ -17,26 +15,16 @@ public class ForecastData {
 
   private String source;
   private Time time;
-  private Long swellHeight;
-  private Long swellDirection;
-  private Long swellPeriod;
   private Long waveHeight;
   private Long waveDirection;
-  private Long wavePeriod;
   private Long waterTemperature;
   private Long windSpeed;
   private Long windDirection;
-  private Long windGust;
-  //windGust is in m/s (might have to change data type)
   private Long airTemperature;
-  private Long airPressure;
-  private Long humidity;
-  private Long cloudCover;
   private Long precipitation;
-  private Long visiblity;
+  private Long visibility;
   private Long dailyQuota;
-  private Long latitude;
-  private Long longitude;
   private Long requestCount;
-  private List<ForecastData> forecastDataList = new ArrayList();
+  private Long lat;
+  private Long lng;
 }
