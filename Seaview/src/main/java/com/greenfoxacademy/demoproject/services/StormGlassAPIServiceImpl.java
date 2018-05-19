@@ -9,7 +9,7 @@ import retrofit2.Call;
 @Service
 public class StormGlassAPIServiceImpl implements StormGlassAPIService {
 
-  private static final Logger LOGGER = new LoggerFactory.getLogger(StormGlassAPIServiceImpl.class);
+  //private static final Logger LOGGER = new LoggerFactory.getLogger(StormGlassAPIServiceImpl.class);
 
   private static final String TOKEN = System.getenv("API_KEY");
 
