@@ -23,8 +23,4 @@ public class ForecastData {
   private Long airTemperature;
   private Long precipitation;
   private Long visibility;
-  private Long dailyQuota;
-  private Long requestCount;
-  private Long lat;
-  private Long lng;
 }
