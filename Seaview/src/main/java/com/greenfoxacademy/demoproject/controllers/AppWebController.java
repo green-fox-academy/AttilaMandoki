@@ -1,6 +1,7 @@
 package com.greenfoxacademy.demoproject.controllers;
 
-import com.greenfoxacademy.demoproject.models.Coordinates;
+import com.greenfoxacademy.demoproject.models.ForecastData;
+import com.greenfoxacademy.demoproject.models.Meta;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,12 +12,13 @@ public class AppWebController {
 
   @RequestMapping(value = "/stormglasscall", method = RequestMethod.GET)
   public String submitCoordinates(Model model) {
-    model.addAttribute("coordinates", new Coordinates());
+    model.addAttribute("meta", new Meta());
     return "/";
   }
 
   @RequestMapping(value = "/", method = RequestMethod.GET)
   public String mainPage(Model model) {
-    return null;
+    model.addAttribute("forecast", ForecastData.class);
+    return "/";
   }
 }

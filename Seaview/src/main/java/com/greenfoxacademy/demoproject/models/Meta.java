@@ -15,6 +15,7 @@ public class Meta {
 
   private Long dailyQuota;
   private Long requestCount;
-  @Embedded
-  private Coordinates coordinates;
+  private String lat;
+  private String lng;
+  private String coordinates = lat + lng;
 }

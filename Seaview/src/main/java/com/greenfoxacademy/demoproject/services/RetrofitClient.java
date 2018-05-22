@@ -20,7 +20,7 @@ public class RetrofitClient {
     this.stormGlassAPIService = stormGlassAPIService;
   }
 
-  static final String STORM_GLASS_URL = "https://api.stormglass.io/";
+  private static final String STORM_GLASS_URL = "https://api.stormglass.io/";
 
   public static Retrofit getConnection(String connectionUrl) {
 
@@ -31,7 +31,6 @@ public class RetrofitClient {
     return new Retrofit.Builder()
             .baseUrl(connectionUrl)
             .addConverterFactory(GsonConverterFactory.create(gson))
-            //.addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(new OkHttpClient
                     .Builder()
                     .readTimeout(120, TimeUnit.SECONDS)
